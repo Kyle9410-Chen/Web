@@ -1,0 +1,78 @@
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+body{
+    margin: 0;
+}
+
+.header a{
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.header-right{
+    float: right;
+    height: max-content;
+}
+
+.header .material-symbols-outlined{
+    height: 100%;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.header #bright_tips{
+    visibility: hidden;
+    opacity: 0;
+    width: 120px;
+    background-color: #2222f2;
+    border-radius: 4px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: opacity 500ms;
+
+    position: absolute;
+    margin-left: -60px;
+    top: 85px;
+    right: 0;
+}
+
+h1{
+    margin-left: 20px;
+}
+p{
+    margin-left: 20px;
+}
+
+.loader{
+    width: 100%;
+    height: 100%;
+    background-color: #2e2e2e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader span{
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    font-size: 100px;
+    color: #ffffff;
+}
+
+@keyframes loading{
+    0% {transform: rotate(0);}
+    50% {transform: rotate(360deg);}
+}

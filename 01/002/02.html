@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+        <script src="02.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".menu").click(function(){
+                    $("#menu_dropdown").slideToggle(500);
+                });
+            });
+        </script>
+
+        <title>乙班26號陳維基1-2</title>
+    </head>
+    <body>
+        <div id="header" class="header">
+            <a class="title_content">乙班26號陳維基1-2</a>
+            <div class="menu" onclick="menuClick(this)">
+                <div class="menu_line"></div>
+                <div class="menu_line"></div>
+                <div class="menu_line"></div>
+            </div>
+        </div>
+
+        <div id="menu_dropdown" onclick="themeClick(this)">
+            <div class="menu_dropdown_content content_start">
+                <span class="material-symbols-outlined content">brightness_6</span>
+                <p class="content">Theme</p>
+            </div>
+
+            <div class="menu_dropdown_content content_end">
+                <span class="material-symbols-outlined content">brightness_6</span>
+                <p class="content">Theme</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>班級 : 資訊二乙</p>
+            <p>座號 : 26</p>
+            <p>姓名 : 陳維基</p>
+        </div>
+    </body>
+</html>
