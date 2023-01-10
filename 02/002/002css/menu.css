@@ -1,0 +1,39 @@
+.menu {
+    position: absolute;
+    width: 100%;
+    top: 7vh;
+}
+
+.menu .dropdown {
+    position: absolute;
+    width: 8vw;
+    border-bottom-left-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+    border-left: #2f2f2f solid 1px;
+    border-right: #2f2f2f solid 1px;
+    border-bottom: #2f2f2f solid 1px;
+    display: none;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.menu .dropdown:nth-child(1) {
+    right: 16vw
+}
+.menu .dropdown:nth-child(2) {
+    right: 8vw
+}
+.menu .dropdown:nth-child(3) {
+    right: 0vw
+}
+
+.menu .dropdown .dropdown_content:nth-child(n + 2) {
+    border-top: #2f2f2f solid 1px;
+}
+
+.menu .dropdown .dropdown_content {
+    padding: 1.5vh 2vw;
+    font-size: 1.5vmin;
+    display: inline;
+}

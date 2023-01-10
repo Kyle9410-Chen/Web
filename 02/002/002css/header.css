@@ -1,0 +1,48 @@
+#header {
+    overflow: hidden;
+    background-color: #e1e1e1;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+
+#header .content {
+    font-size: 2vmax;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+#header .mark {
+    position: absolute;
+    width: 2vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+#header .mark:nth-child(2){
+    right: 16vw;
+}
+
+#header .mark:nth-child(3){
+    right: 8vw;
+}
+
+#header .mark:last-child{
+    right: 0px;
+}
+
+#header .mark .mark_content {
+    font-size: 1vmax;
+}
+
+#header .mark:hover {
+    background-color: #00aaff22;
+    border-bottom: 8px solid #0088dd;
+}

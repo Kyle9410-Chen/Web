@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../002css/header.css">
+    <link rel="stylesheet" href="../002css/main.css">
+    <link rel="stylesheet" href="../002css/menu.css">
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>乙班26號陳維基2-2</title>
+</head>
+<body>
+    <div id="header">
+        <a class="content">乙班26號陳維基2-2</a>
+        <div class="mark">
+            <a class="mark_content">主食</a>
+        </div>
+        <div class="mark">
+            <a class="mark_content">飲料</a>
+        </div>
+        <div class="mark">
+            <a class="mark_content">甜點</a>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="dropdown">
+            <a class="dropdown_content" href="dish01.html">牛排</a>
+            <a class="dropdown_content" href="dish02.html">漢堡</a>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown_content" href="dish03.html">柳橙汁</a>
+            <a class="dropdown_content" href="dish04.html">紅茶</a>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown_content" href="dish05.html">提拉米蘇</a>
+            <a class="dropdown_content" href="dish06.html">起司蛋糕</a>
+        </div>
+    </div>
+
+    <img src="../source/05.jpg">
+
+</body>
+
+<script>
+    $(document).ready(function(){
+        $(".mark").click(function(){
+            let index = $(this).parent().children().index(this)
+            let curElement = $(`.menu .dropdown:nth-child(${index})`)
+            if (curElement.is(":hidden")){
+                curElement.slideDown("fast").css({display: "flex"})
+                for (let i = 0; i < $(this).parent().children().length; i++) {
+                    if (i != index){
+                        $(`.menu .dropdown:nth-child(${i})`).slideUp("fast") 
+                    }
+                }
+            }
+            else {
+                curElement.slideUp("fast").css({display: "flex"})
+                for (let i = 0; i < $(this).parent().children().length; i++) {
+                    if (i != index){
+                        $(`.menu .dropdown:nth-child(${i})`).slideUp("fast")
+                    }
+                }
+            }
+        })
+    })
+</script>
+</html>

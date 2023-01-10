@@ -1,0 +1,13 @@
+#color {
+    position: absolute;
+    right: 0;
+    height: 91vh;
+    padding: 2vh 5vw 0vh 2vw;
+    border-top-left-radius: 4vmin;
+    border-bottom-left-radius: 4vmin;
+    background-color: #e1e1e1;
+}
+
+#color .color_content{
+    padding-bottom: 3vh;
+}
