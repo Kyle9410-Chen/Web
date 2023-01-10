@@ -5,9 +5,27 @@
     padding: 2vh 5vw 0vh 2vw;
     border-top-left-radius: 4vmin;
     border-bottom-left-radius: 4vmin;
-    background-color: #e1e1e1;
+    display: none;    
+
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: slideRight;
 }
 
 #color .color_content{
     padding-bottom: 3vh;
+}
+
+#color .color_content input {
+    width: 8vw;
+}
+
+@keyframes slideRight {
+    0% { right : -7vw; opacity: 0;}
+    100% { right : 0; opacity: 1;}
 }

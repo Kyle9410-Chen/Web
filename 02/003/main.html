@@ -5,40 +5,31 @@
     <link rel="stylesheet" href="003css/color.css">
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>乙班26號陳維基2-2</title>
+    <title>乙班26號陳維基2-3</title>
 </head>
 <body>
 
-    <div id="header">
-        <a class="content">乙班26號陳維基2-2</a>
-        <div class="mark">
+    <div id="header" class="color_change">
+        <a class="content">乙班26號陳維基2-3</a>
+        <div class="mark" onclick="toggleSidebar()">
             <a class="mark_content">顏色</a>
         </div>
     </div>
 
-    <div id="color">
-        <div id="R" class="color_content">
+    <div id="color" class="color_change">
+        <div class="color_content">
             <span>R</span>
-            <input type="range" max="255" min="0" value="225">
+            <input id="R" type="range" max="255" min="0" value="225" onchange="colorChange()">
         </div>
-        <div id="G" class="color_content">
+        <div class="color_content">
             <span>G</span>
-            <input type="range" max="255" min="0" value="225">
+            <input id="G" type="range" max="255" min="0" value="225" onchange="colorChange()">
         </div>
-        <div id="B" class="color_content">
+        <div class="color_content">
             <span>B</span>
-            <input type="range" max="255" min="0" value="225">
+            <input id="B" type="range" max="255" min="0" value="225" onchange="colorChange()">
         </div>
     </div>
 
 </body>
-
-<script>
-    $(document).ready(function(){
-        $(".mark").click(function(){
-            $("#color").slideToggle("slow")
-        })
-    })
-</script>
-
 </html>
