@@ -18,3 +18,39 @@ function colorChange(){
         element.style.backgroundColor = `rgb(${r.value},${g.value},${b.value})`
     }
 }
+
+function colorClick(id){
+    let elements = document.getElementsByClassName("color_change")
+    for (let element of elements){
+        switch (id) {
+        case 1:
+            element.style.backgroundColor = "rgb(255, 0, 0)"
+            break;
+        case 2:
+            element.style.backgroundColor = "rgb(255, 165, 0)"
+            break;
+        case 3:
+            element.style.backgroundColor = "rgb(255, 255, 0)"
+            break;
+        case 4:
+            element.style.backgroundColor = "rgb(0, 2, 0)"
+            break;
+        case 5:
+            element.style.backgroundColor = "rgb(0, 0, 255)"
+            break;
+        case 6:
+            element.style.backgroundColor = "rgb(75, 0, 130)"
+            break;
+        case 7:
+            element.style.backgroundColor = "rgb(128, 0, 128)"
+            break;
+        default:
+            break;
+        }
+    }
+    let color = elements[0].style.backgroundColor
+    let rgb = /rgb\((\d+), (\d+), (\d+)\)/.exec(color)
+    document.getElementById("R").value = rgb[1]
+    document.getElementById("G").value = rgb[2]
+    document.getElementById("B").value = rgb[3]
+}

@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="003css/header.css">
     <link rel="stylesheet" href="003css/main.css">
     <link rel="stylesheet" href="003css/color.css">
+    <link rel="stylesheet" href="003css/table.css">
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>乙班26號陳維基2-3</title>
@@ -29,6 +30,39 @@
             <span>B</span>
             <input id="B" type="range" max="255" min="0" value="225" onchange="colorChange()">
         </div>
+    </div>
+    
+    <div id="table">
+        <table rules="all">
+            <tr>
+                <td>紅色</td>
+                <td class="clickable" style="background-color: rgb(255, 0, 0);" onclick="colorClick(1)"></td>
+            </tr>
+            <tr>
+                <td>橙色</td>
+                <td class="clickable" style="background-color: rgb(255, 165, 0);" onclick="colorClick(2)"></td>
+            </tr>
+            <tr>
+                <td>黃色</td>
+                <td class="clickable" style="background-color: rgb(255, 255, 0);" onclick="colorClick(3)"></td>
+            </tr>
+            <tr>
+                <td>綠色</td>
+                <td class="clickable" style="background-color: rgb(0, 128, 0);" onclick="colorClick(4)"></td>
+            </tr>
+            <tr>
+                <td>藍色</td>
+                <td class="clickable" style="background-color: rgb(0, 0, 255);" onclick="colorClick(5)"></td>
+            </tr>
+            <tr>
+                <td>靛色</td>
+                <td class="clickable" style="background-color: rgb(75, 0, 135);" onclick="colorClick(6)"></td>
+            </tr>
+            <tr>
+                <td>紫色</td>
+                <td class="clickable" style="background-color: rgb(128, 0, 128);" onclick="colorClick(7)"></td>
+            </tr>
+        </table>
     </div>
 
 </body>
