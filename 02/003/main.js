@@ -33,7 +33,7 @@ function colorClick(id){
             element.style.backgroundColor = "rgb(255, 255, 0)"
             break;
         case 4:
-            element.style.backgroundColor = "rgb(0, 2, 0)"
+            element.style.backgroundColor = "rgb(0, 128, 0)"
             break;
         case 5:
             element.style.backgroundColor = "rgb(0, 0, 255)"
