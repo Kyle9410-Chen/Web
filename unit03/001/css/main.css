@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#header {
+    background-color: #e1e1e1;
+    height: 7vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+
+#header a{
+    font-size: 2vmax;
+    font-weight: bold;
+    padding-left: 20px;
+}
