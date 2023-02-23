@@ -10,3 +10,9 @@ img {
     margin: 0;
     padding: 0;    
 }
+
+#header a.content{
+    color : black;
+    font-style: normal;
+    text-decoration: none;
+}

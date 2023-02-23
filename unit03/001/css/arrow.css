@@ -1,0 +1,49 @@
+#Right {
+    position: absolute;
+    width: 8vw;
+    height: 93vh;
+    top: 7vh;
+    right: 0;
+    background-color: #1e1e1e55;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    visibility: visible;
+}
+
+#Right span{
+    font-size: 5em;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#Left {
+    position: absolute;
+    width: 8vw;
+    height: 93vh;
+    top: 7vh;
+    left: 0;
+    background-color: #1e1e1e55;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    visibility: hidden;
+}
+
+#Left span{
+    font-size: 5em;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#Left span:hover {
+    font-size: 7em;
+}
+
+#Right span:hover {
+    font-size: 7em;
+}

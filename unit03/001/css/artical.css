@@ -10,23 +10,25 @@
     height: 100%;
     top: 0;
     position: absolute;
+    background-color: #e1e1e1e1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 #content .artical:nth-child(1){
-    background-color: #e1e1e1e1;
     background-image: url("../source/001.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     float: left;
     left: 0;
 }
 #content .artical:nth-child(2){
-    background-color: #e1e1e1e1;
     background-image: url("../source/002.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     float: left;
     left: 100%;
+}
+#content .artical:nth-child(3){
+    background-image: url("../source/003.jpg");
+    float: left;
+    left: 200%;
 }
 
 #content .artical .glass p{
@@ -39,7 +41,7 @@
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #e1e1e155;
+    background-color: #e1e1e177;
     position: relative;
     width: 100%;
     height: 100%;
