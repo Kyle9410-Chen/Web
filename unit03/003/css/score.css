@@ -7,10 +7,26 @@
     align-items: center;
 }
 
-#score table{
+#score #tableScore{
     width : 70vw;
     table-layout: fixed;
     position: relative;
     top: 5vh;
+    border: 2px solid #000;
 }
 
+#score #tableScore th,td{
+    font-size: 150%;
+    text-align: center;
+    height: 6vh;
+}
+
+#score #tableScore th{
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+#score #tableScore td{
+    background-color: #fff;
+    color: #000;
+}

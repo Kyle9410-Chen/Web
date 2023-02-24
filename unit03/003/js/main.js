@@ -1,3 +1,29 @@
+var color = [
+    "#ff0000",
+    "#00ff00",
+    "#0000ff",
+    "#ffff00",
+    "#00ffff",
+    "#ff00ff",
+    "#ffffff",
+    "#ff8080",
+    "#80ff80",
+    "#8080ff",
+]
+var lineColor = [
+    "#ff000080",
+    "#00ff0080",
+    "#0000ff80",
+    "#ffff0080",
+    "#00ffff80",
+    "#ff00ff80",
+    "#ffffff80",
+    "#ff808080",
+    "#80ff8080",
+    "#8080ff80",
+]
+
+var data = []
 class stuData {
     name = ""
     no = 0
@@ -21,7 +47,10 @@ class stuData {
     }
 }
 
-var data = []
+window.onload = function() {
+    createTable()
+}
+
 
 function randomNumber(max){
     return Math.floor(Math.random() * max)
@@ -29,50 +58,110 @@ function randomNumber(max){
 
 function createTable(){
     for (let i = 0; i < 10; i++) {
-        data.push(new stuData("name1", data.length+1, randomNumber(100), randomNumber(100), randomNumber(100), randomNumber(100), randomNumber(100)))
+        data.push(new stuData(`name${data.length+1}`, data.length+1, randomNumber(100), randomNumber(100), randomNumber(100), randomNumber(100), randomNumber(100)))
     }
 
-    var table = document.getElementById("tableScroe")
+    var table = document.getElementById("tableScore")
 
     for (let i = 0; i < data.length; i++) {
         var tr = document.createElement("tr")
+        tr.classList.add("tableContent")
         
         for (let j = 0; j < 9; j++) {
             var d = data[i]
             var td = document.createElement("td")
+            td.classList.add("tableContent")
             switch (j) {
                 case 0:
-                    td.appendChild(d.name)
+                    td.append(d.name)
                     break;
                 case 1:
-                    td.appendChild(d.no)
+                    td.append(d.no)
                     break;
                 case 2:
-                    td.appendChild(d.chinese)
+                    td.append(d.chinese)
                     break;
                 case 3:
-                    td.appendChild(d.english)
+                    td.append(d.english)
                     break;
                 case 4:
-                    td.appendChild(d.math)
+                    td.append(d.math)
                     break;
                 case 5:
-                    td.appendChild(d.s1)
+                    td.append(d.s1)
                     break;
                 case 6:
-                    td.appendChild(d.s2)
+                    td.append(d.s2)
                     break;
                 case 7:
-                    td.appendChild(d.total)
+                    td.append(d.total)
                     break;
                 case 8:
-                    td.appendChild(d.avg)
+                    td.append(d.avg)
                     break;
             }
             tr.appendChild(td)
         }
         table.appendChild(tr)
     }
+}
 
+function generateChart(){
+    var element = document.getElementById("score")
+    new Chart("chart",{
+        type: "line",
+        data:{
+            labels: ["","國文", "英文", "數學", "專一", "專二",""],
+            datasets: (() => {
+                var res = []
+                for (let i = 0; i < data.length; i++) {
+                    res.push({
+                        label: data[i].name,
+                        fill: false,
+                        lineTension: 0,
+                        pointRadius: 5,
+                        borderWidth: 5,
+                        backgroundColor: color[i],
+                        borderColor: lineColor[i],
+                        data: data.map(x=> [null, x.chinese, x.english, x.math, x.s1, x.s2, null] )[i]
+                    })
+                }
+                return res
+            })()
+        },
+        options:{
+            legend:{
+                labels:{
+                    fontColor: "#fff",
+                    fontSize: 18
+                }
+            },
+            scales:{
+                xAxes:[{
+                    display: true,
+                    gridLines:{
+                        color: "#e1e1e155"
+                    },
+                    ticks:{
+                        fontSize: 18,
+                        fontColor: "rgba(255,255,255,1)"
+                    }
+                }],
+                yAxes:[{
+                    gridLines:{
+                        color: "#e1e1e155"
+                    },
+                    ticks:{
+                        fontSize: 18,
+                        fontColor: "rgba(255,255,255,1)"
+                    }
+                }],
+            }
+        }
+    })
+    window.scrollTo({behavior: "smooth", top: document.body.scrollHeight})
+}
 
+function backTo(){
+    window.scrollTo({behavior: "smooth", top: 0})
 }
