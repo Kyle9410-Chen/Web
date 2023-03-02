@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./001/css/main.css">
+    <link rel="stylesheet" href="./001/css/info.css">
+    <link rel="stylesheet" href="./001/css/menu.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./001/js/main.js"></script>
+    <title>乙班26號陳維基4-1</title>
+</head>
+<body>
+    <div id="header">
+        <a class="content">乙班26號陳維基4-1</a>
+    </div>
+
+    <div id="content">
+        <div id="gallery" onscroll="">
+            <div id="infoData">
+                <div id="main">
+                    <a class="content" onclick="onClickMark(0)">自我介紹</a>
+                    <a class="material-symbols-outlined content" onclick="onClickMark(0)">arrow_forward</a>
+                </div>
+            
+                <div id="info_background">
+                    <div class="info">
+                        <img src="./001/source/02.jpg">
+                        <section class="block right">
+                            <p class="title">國小</p>
+                            <p class="content">
+                                國小時因為想逃避午休，所以加入直笛團，不知不覺就在直笛團待了五年
+                                <br>
+                                而之後也不知道哪根筋不對，跑去加入棒球隊，就開始了為期兩年半的棒球生涯
+                            </p>
+                            <a class="school">就讀學校</a>
+                            <a class="material-symbols-outlined arrow">arrow_forward</a>
+                            <a class="school" href="https://www.gdps.ntpc.edu.tw/">金龍國小</a>
+                        </section>
+                    </div>
+                    <div class="info">
+                        <section class="block right">
+                            <p class="title">國中</p>
+                            <p class="content">
+                                國中的暑假是接觸程式的開始，在國一升國二的暑假開始學習Python
+                                <br>
+                                上了國中之後也開始慢慢決定以後的方向，也是在這時就決定了朝程式這個方向學習
+                                <br>
+                                在國三的技藝班也代表學校出去比賽，雖然成績並不理想，但也在這時奠定了基礎
+                            </p>
+                            <a class="school">就讀學校</a>
+                            <a class="material-symbols-outlined arrow">arrow_forward</a>
+                            <a class="school" href="https://www.csjhs.ntpc.edu.tw/">青山國中</a>
+                        </section>
+                        <img src="./001/source/02.jpg">
+                    </div>
+                    <div class="info">
+                        <img src="./001/source/02.jpg">
+                        <section class="block right">
+                            <p class="title">高中</p>
+                            <p class="content">
+                                高中後，開始為了選手而努力，犧牲了許多玩樂的時間來練習
+                                <br>
+                                期間接觸了很多不同的語言，C#、Java、Kotlin...等
+                                <br>
+                                而在升高二的暑假也在全國賽拿下第二名的成績，之後也要為了成為國手而努力
+                            </p>
+                            <a class="school">就讀學校</a>
+                            <a class="material-symbols-outlined arrow">arrow_forward</a>
+                            <a class="school" href="https://www.taivs.tp.edu.tw/">大安高工</a>
+                        </section>
+                    </div>
+                    <div class="info">
+                        <section class="block right">
+                            <p class="title">校外</p>
+                            <p class="content">
+                                在國三時參加了Minecraft創作團隊 夢想之都
+                                <br>
+                                在裡面認識了不少人，也參與了不少的地圖創作
+                                <br>
+                                學習到不少團隊製作專案的經驗
+                            </p>
+                            <a class="school">官方網站</a>
+                            <a class="material-symbols-outlined arrow">arrow_forward</a>
+                            <a class="school" href="https://www.dreamcity.studio/">夢想之都官網</a>
+                        </section>
+                        <img src="./001/source/02.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="menu">
+                <div id="menuType">
+                    <div class="mark">
+                        <a>主菜</a>
+                    </div>
+                    <div class="mark">
+                        <a>飲料</a>
+                    </div>
+                    <div class="mark">
+                        <a>甜點</a>
+                    </div>
+                    <div class="mark" onclick="closeImage()">
+                        <a>返回首頁</a>
+                    </div>
+                </div>
+
+                <div id="markDetail">
+                    <div class="dropdown">
+                        <p onclick="showImage(0)">牛排</p>
+                        <p onclick="showImage(1)">漢堡</p>
+                    </div>
+                    <div class="dropdown">
+                        <p onclick="showImage(2)">柳橙汁</p>
+                        <p onclick="showImage(3)">紅茶</p>
+                    </div>
+                    <div class="dropdown">
+                        <p onclick="showImage(4)">提拉米蘇</p>
+                        <p onclick="showImage(5)">起司蛋糕</p>
+                    </div>
+                </div>
+
+                <img id="dish" src="">
+            </div>
+        </div>
+    </div>
+
+    <div id="toRight" onclick="toRight()">
+        <p class="material-symbols-outlined">chevron_right</p>
+    </div>
+    <div id="toLeft" onclick="toLeft()">
+        <p class="material-symbols-outlined">chevron_left</p>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function(){
+        $(".mark").click(function(){
+            let index = $(this).parent().children().index(this)
+            let curElement = $(`#markDetail .dropdown:nth-child(${index+1})`)
+            if (curElement.is(":hidden")){
+                curElement.slideDown("fast")
+                for (let i = 0; i < $(this).parent().children().length; i++) {
+                    if (i != index){
+                        $(`#markDetail .dropdown:nth-child(${i+1})`).slideUp("fast") 
+                    }
+                }
+            }
+            else {
+                curElement.slideUp("fast")
+                for (let i = 0; i < $(this).parent().children().length; i++) {
+                    if (i != index){
+                        $(`#markDetail .dropdown:nth-child(${i+1})`).slideUp("fast")
+                    }
+                }
+            }
+        })
+    })
+</script>
+</html>

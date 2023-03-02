@@ -4,7 +4,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(../source/dirt.png);
     background-repeat: repeat;
-    /* overflow-y : scroll; */
 }
 
 #header {

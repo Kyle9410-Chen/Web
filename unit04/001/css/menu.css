@@ -1,0 +1,69 @@
+#menu {
+    position: absolute;
+    float: left;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    background-color: #4e4e4e;
+}
+
+#menuType {
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #1e1e1e;
+    overflow: hidden;
+}
+
+#menuType .mark {
+    width: 8vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuType .mark:hover {
+    background-color: #00aaff22;
+    border-bottom: 8px solid #0088dd;
+}
+
+#menuType .mark a {
+    font-size: 1vw;
+    color: #fff;
+}
+
+#markDetail .dropdown {
+    width: 8vw;
+    background-color: #2e2e2e;
+    border-left: 4px solid #1e1e1e;
+    display: none;
+    position: absolute;
+    top: 6vh;
+}
+
+#markDetail .dropdown:nth-child(1){
+    left: 0;
+}
+
+#markDetail .dropdown:nth-child(2){
+    left: 8vw;
+}
+
+#markDetail .dropdown:nth-child(3){
+    left: 16vw;
+}
+
+
+#markDetail .dropdown p {
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+#dish {
+    width: 50vw;
+    height: 50vh;
+    display: block;
+    visibility: hidden;
+}

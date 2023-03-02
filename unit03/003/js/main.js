@@ -24,6 +24,8 @@ var lineColor = [
 ]
 
 var data = []
+
+var chart
 class stuData {
     name = ""
     no = 0
@@ -49,6 +51,7 @@ class stuData {
 
 window.onload = function() {
     createTable()
+    generateChart()
 }
 
 
@@ -107,8 +110,7 @@ function createTable(){
 }
 
 function generateChart(){
-    var element = document.getElementById("score")
-    new Chart("chart",{
+    chart = new Chart("chart",{
         type: "line",
         data:{
             labels: ["","國文", "英文", "數學", "專一", "專二",""],
@@ -159,9 +161,36 @@ function generateChart(){
             }
         }
     })
+}
+
+function downTo(){
+    var element = document.getElementById("score")
+    data.forEach(v => {
+        chart.data.datasets.pop()
+    });
+    chart.update()
     window.scrollTo({behavior: "smooth", top: document.body.scrollHeight})
 }
 
 function backTo(){
     window.scrollTo({behavior: "smooth", top: 0})
+}
+
+function chartAnimation() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight){
+        data.forEach((v, index) => {
+            var res = {
+                label: v.name,
+                fill: false,
+                lineTension: 0,
+                pointRadius: 5,
+                borderWidth: 5,
+                backgroundColor: color[index],
+                borderColor: lineColor[index],
+                data: [null, v.chinese, v.english, v.math, v.s1, v.s2, null]
+            }
+            chart.data.datasets.push(res)
+        })
+        chart.update()
+    }
 }
