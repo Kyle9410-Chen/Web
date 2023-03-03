@@ -1,0 +1,22 @@
+#dataAnalysis{
+    background-color: #1e1e1e;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dataAnalysis button{
+    font-size: 200%;
+    color: #fff;
+    background-color: #1e1e1e;
+    padding: 1vh 2vw 1vh 2vw;
+    position: relative;
+    bottom: -5vh;
+    border-radius: 10px;
+}
+
+#dataAnalysis button:hover{
+    border: 1px solid #0088dd
+}

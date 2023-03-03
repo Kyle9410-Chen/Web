@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../source/dirt.png);
+    background-repeat: repeat;
+}
+
+#header {
+    overflow: hidden;
+    background-color: #e1e1e1;
+    height: 7vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+
+#header .content{
+    font-size: 2vmax;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+#header .mark{
+    position: absolute;
+    width: 2vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    cursor: pointer;
+    right: 0;
+}
+
+#header .mark:nth-child(3){
+    right: 8vw;
+}
+
+#header .mark .mark_content{
+    font-size: 1vmax;
+}
+
+#header .mark:hover{
+    background-color: #00aaff22;
+    border-bottom: 8px solid #0088dd;
+}
+
+#snackbar {
+    position: fixed;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    bottom: 5vh;
+    font-size: 1.5vmax;
+    visibility: hidden;
+}
+
+#snackbar a{
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0; 
+        opacity: 0;
+    }
+    to {
+        bottom: 5vh; 
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeout {
+    from {
+        bottom: 5vh;
+        opacity: 1;
+    }
+    to {
+        bottom: 0; 
+        opacity: 0;
+    }
+}

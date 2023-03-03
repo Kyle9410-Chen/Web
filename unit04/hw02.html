@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./002/css/main.css">
+    <link rel="stylesheet" href="./002/css/score.css">
+    <link rel="stylesheet" href="./002/css/chart.css">
+    <title>乙班26號陳維基4-2</title>
+    <script src="./002/js/main.js"></script>
+    <script src="./002/js/analysis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+    <script>
+        window.onload = () => {
+            createTable()
+            generateChart()
+        }
+    </script>
+</head>
+<body onscroll="chartAnimation()">
+    <div id="header">
+        <a class="content">乙班26號陳維基4-2</a>
+        <div class="mark" onclick="downTo()">
+            <a class="mark_content">圖表</a>
+        </div>
+        <div class="mark" onclick="showSnackbar()">
+            <a class="mark_content">說明</a>
+        </div>
+    </div>
+
+    <div id="score">
+        <table id="tableScore">
+            <tr>
+                <th onclick="sortData(0, this)">姓名</th>
+                <th onclick="sortData(1, this)">座號</th>
+                <th onclick="sortData(2, this)">國文</th>
+                <th onclick="sortData(3, this)">英文</th>
+                <th onclick="sortData(4, this)">數學</th>
+                <th onclick="sortData(5, this)">專一</th>
+                <th onclick="sortData(6, this)">專二</th>
+                <th onclick="sortData(7, this)">總分</th>
+                <th onclick="sortData(8, this)">平均</th>
+                <th>分析</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="dataAnalysis">
+        <canvas id="chart" style="max-width:80vw; max-height:80vh; position: relative;top: 5vh;"></canvas>
+        <button onclick="backTo()">back</button>
+    </div>
+
+    <div id="snackbar">
+        <a>點擊欄位名稱排序資料</a>
+    </div>
+</body>

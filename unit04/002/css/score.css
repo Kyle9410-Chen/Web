@@ -1,0 +1,43 @@
+#score {
+    width : 100vw;
+    height : 93vh;
+    background-color: #e1e1e155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#score #tableScore{
+    width : 70vw;
+    table-layout: fixed;
+    position: relative;
+    top: 5vh;
+    border: 2px solid #000;
+}
+
+#score #tableScore th,td{
+    font-size: 150%;
+    text-align: center;
+    height: 6vh;
+    box-sizing: border-box;
+}
+
+#score #tableScore th{
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+#score #tableScore td{
+    background-color: #fff;
+    color: #000;
+}
+
+#score #tableScore .selfAnalysis{
+    background-color: #002244;
+    color: #fff;
+    cursor: pointer;
+}
+
+#score #tableScore .selfAnalysis:hover{
+    text-decoration: underline;
+}
