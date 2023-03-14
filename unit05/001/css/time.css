@@ -1,0 +1,47 @@
+#time {
+    background-color: #2e2e2e;
+    border-radius: 40px;
+    display: flex;
+    padding: 10px 40px;
+    font-weight: 500;
+    border: #000;
+    margin-top: 10px;
+}
+
+#time div{
+    font-size: 3em;
+    width: 80px;
+    position: relative;
+    text-align: center;
+    color: var(--color);
+}
+
+#time div:nth-child(1)::after {
+    content: ":";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    animation: flash 1s steps(1) infinite;
+}
+
+#time div:nth-child(2)::after {
+    content: ":";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    animation: flash 1s steps(1) infinite;
+}
+
+#time div:last-child {
+    font-size: 1.5em;
+    top: 15px;
+}
+
+@keyframes flash {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}

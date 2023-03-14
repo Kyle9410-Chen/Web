@@ -2,7 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./001/css/main.css">
+    <link rel="stylesheet" href="./001/css/time.css">
     <link rel="stylesheet" href="./001/css/clock.css">
+    <script src="./001/js/clock.js"></script>
     <title>乙班26號陳維基5-1</title>
 </head>
 <body>
@@ -23,19 +25,31 @@
         ?>
 
         <div id="clock">
-            <span style="--i:1">1</span>
-            <span style="--i:2">2</span>
-            <span style="--i:3">3</span>
-            <span style="--i:4">4</span>
-            <span style="--i:5">5</span>
-            <span style="--i:6">6</span>
-            <span style="--i:7">7</span>
-            <span style="--i:8">8</span>
-            <span style="--i:9">9</span>
-            <span style="--i:10">10</span>
-            <span style="--i:11">11</span>
-            <span style="--i:12">12</span>
+            
+            <div id="second" class="circle" style="--color:#f00"><i></i></div>
+            <div id="minute" class="circle" style="--color:#ff0"><i></i></div>
+            <div id="hour" class="circle" style="--color:#0f0"><i></i></div>
+
+            <span style="--i:1"><b>1</b></span>
+            <span style="--i:2"><b>2</b></span>
+            <span style="--i:3"><b>3</b></span>
+            <span style="--i:4"><b>4</b></span>
+            <span style="--i:5"><b>5</b></span>
+            <span style="--i:6"><b>6</b></span>
+            <span style="--i:7"><b>7</b></span>
+            <span style="--i:8"><b>8</b></span>
+            <span style="--i:9"><b>9</b></span>
+            <span style="--i:10"><b>10</b></span>
+            <span style="--i:11"><b>11</b></span>
+            <span style="--i:12"><b>12</b></span>
         </div>
+
+        <div id="time">
+            <div id="hr" style="--color:#0f0">00</div>
+            <div id="mn" style="--color:#ff0">00</div>
+            <div id="sc" style="--color:#f00">00</div>
+            <div id="type" style="--color:#fff">AM</div>
+        </div> 
     </div>
     
 </body>
