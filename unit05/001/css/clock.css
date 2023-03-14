@@ -1,0 +1,24 @@
+#clock {
+    width: 500px;
+    height: 500px;
+    background-color: #2e2e2e;
+    border-radius: 50%;
+    box-shadow: 10px 40px 60px #0005;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #fff;
+}
+
+#clock a {
+    position: absolute;
+    inset: 20px;
+}
