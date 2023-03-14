@@ -9,12 +9,29 @@ function selfAnalysis(index){
             labels: ["國文", "英文", "數學", "專一", "專二"]
         },
         options: {
-            scales: {
+            legend:{
+                labels:{
+                    fontColor: "#fff",
+                    fontSize: 18
+                }
+            },
+            scale: {
                 ticks: {
-                    stepSize: 10
+                    stepSize: 10,
+                    max: 100,
+                    min: 0
                 },
                 angleLines: {
-                    color: "#e1e1e155"
+                    color: "#e1e1e155",
+                    lineWidth: 1,
+                },
+                gridLines: {
+                    color: "#e1e1e155",
+                    lineWidth: 1
+                },
+                pointLabels: {
+                    fontColor: "#fff",
+                    fontSize: 18
                 }
             }
         }
@@ -79,7 +96,7 @@ function generateChart(){
                         borderWidth: 5,
                         backgroundColor: color[i],
                         borderColor: lineColor[i],
-                        data: data.map(x=> [null, x.chinese, x.english, x.math, x.s1, x.s2, null] )[i]
+                        data: data.map(x=> [null, x.chinese, x.english, x.math, x.s1, x.s2, null] )[i],
                     })
                 }
                 return res
@@ -109,7 +126,9 @@ function generateChart(){
                     },
                     ticks:{
                         fontSize: 18,
-                        fontColor: "rgba(255,255,255,1)"
+                        fontColor: "rgba(255,255,255,1)",
+                        max: 100,
+                        min: 0
                     }
                 }],
             }
