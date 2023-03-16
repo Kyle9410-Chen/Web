@@ -16,3 +16,47 @@ img {
     font-style: normal;
     text-decoration: none;
 }
+
+.snackBar {
+    position: fixed;
+    bottom: 70px;
+    width: 100%;
+    text-align: center;
+    visibility: hidden;
+}
+
+.snackBar a {
+    background-color: #1e1e1e;
+    color: #fff;
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+.snackBar.show {
+    visibility: visible;
+    animation: fadein 1s, fadeout 1s 2s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 70px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 70px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

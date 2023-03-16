@@ -1,0 +1,33 @@
+#speed {
+    appearance: none;
+    position: relative;
+    box-sizing: inherit;
+    top: 10px;
+    width: calc(100% - 40px);
+    padding: 0;
+    margin: 0 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #e1e1e1;
+    outline: none;
+    opacity: 0.7;
+    z-index: 10000;
+}
+
+#speed:hover {
+    opacity: 1;
+}
+
+#speed::-webkit-slider-thumb {   
+    -webkit-appearance: none;
+    appearance: none; 
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #0088ff;
+}
+
+#speed::-webkit-slider-thumb:hover {   
+    width: 30px;
+    height: 30px;
+}

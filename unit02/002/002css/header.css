@@ -34,7 +34,7 @@
     right: 8vw;
 }
 
-#header .mark:last-child{
+#header .mark:nth-child(4){
     right: 0px;
 }
 
@@ -43,6 +43,28 @@
 }
 
 #header .mark:hover {
+    background-color: #00aaff22;
+    border-bottom: 8px solid #0088dd;
+}
+
+#header .button {
+    position: absolute;
+    width: 2vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    height: 100%;
+    right: 24vw;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+#header .button .mark_content {
+    font-size: 1vmax;
+}
+
+#header .button:hover {
     background-color: #00aaff22;
     border-bottom: 8px solid #0088dd;
 }

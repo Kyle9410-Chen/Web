@@ -7,8 +7,8 @@ setInterval(() => {
         element.style.transform = `rotate(calc(var(--i)*50deg - ${t}deg))`
     }
 
-    t += speed/10;
-}, 1);
+    t += speed/5;
+}, 10);
 
 function speedChange(){
     
