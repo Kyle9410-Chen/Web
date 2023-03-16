@@ -1,5 +1,5 @@
 var data = new Map()
-var arithmetic = ["+","-","*","/"]
+var arithmetic = ["+","-","*","/","%"]
 data.set("a", 8)
 data.set("b", 2)
 data.set("c", 3)
@@ -60,6 +60,9 @@ function addData(){
         case "/":
             td5.innerText = n1 / n2
             break
+        case "%":
+                td5.innerText = n1 % n2
+                break
         default:
             break;
     }
@@ -124,16 +127,24 @@ function addVar(){
 
 function addName(){
     var string = prompt("輸入變數名稱", "name")
+    console.log(string)
+    if (string == null){
+        return
+    }
     if (data.has(string)){
         alert("已存在")
         return
     }
+
     newVar.name = string
     newVar.status[0] = true
 }
 
 function addValue() {
     var string = prompt("輸入數值", "1")
+    if (string == null){
+        return
+    }
     if (isNaN(parseInt(string))){
         alert("請輸入數字")
         return
@@ -142,6 +153,8 @@ function addValue() {
     newVar.status[1] = true
 }
 
-function remove(index){
-
+function removeData(element){
+    var table = document.getElementById("arithmetic")
+    console.log(element.parentElement.parentElement)
+    table.children[0].removeChild(element.parentElement.parentElement)
 }

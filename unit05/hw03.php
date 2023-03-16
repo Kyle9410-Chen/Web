@@ -35,7 +35,7 @@
                 echo "<tr class=\"sub\"><td>a</td><td>-</td><td>b</td><td>=</td><td>".($a-$b)."</td><td style=\"background-color:#002244\"><a onclick=\"removeData(this)\">移除</a></td></tr>";
                 echo "<tr class=\"multi\"><td>a</td><td>*</td><td>b</td><td>=</td><td>".($a*$b)."</td><td style=\"background-color:#002244\"><a onclick=\"removeData(this)\">移除</a></td></tr>";
                 echo "<tr class=\"divide\"><td>a</td><td>/</td><td>b</td><td>=</td><td>".($a/$b)."</td><td style=\"background-color:#002244\"><a onclick=\"removeData(this)\">移除</a></td></tr>";
-                echo "<tr class=\"divide\"><td>a</td><td>/</td><td>c</td><td>=</td><td>".($a/$c)."</td><td style=\"background-color:#002244\"><a onclick=\"removeData(this)\">移除</a></td></tr>";
+                echo "<tr class=\"divide\"><td>a</td><td>%</td><td>c</td><td>=</td><td>".($a%$c)."</td><td style=\"background-color:#002244\"><a onclick=\"removeData(this)\">移除</a></td></tr>";
                 echo "<tr class=\"plus\"><td>a</td><td>+</td><td>1</td><td>=</td><td>".($a+1)."</td><td style=\"background-color:#002244\"><a onclick=\"removeData(this)\">移除</a></td></tr>";
                 echo "<tr class=\"sub\"><td>c</td><td>-</td><td>1</td><td>=</td><td>".($c-1)."</td><td style=\"background-color:#002244\"><a onclick=\"removeData(this)\">移除</a></td></tr>";
             ?>
