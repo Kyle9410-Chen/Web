@@ -73,11 +73,14 @@ function addData(){
     td6.innerHTML += "<a onclick=\"removeData(this)\">移除</a>"
     tr.appendChild(td6)
 
-    table.appendChild(tr)
+    table.children[0].appendChild(tr)
 }
 
 function selectOne(){
-    var string = prompt("選擇變數: " + Array.from(data.keys()).join(", ") + "或是數字", "a")
+    var string = prompt("選擇變數: " + Array.from(data.keys()).join(", ") + "\n 或是數字", "a")
+    if (string == null){
+        return
+    }
     if (!data.has(string) && isNaN(parseInt(string))){
         alert("請輸入正確的變數")
         return
@@ -88,6 +91,9 @@ function selectOne(){
 
 function selectMode(){
     var string = prompt("選擇運算符: " + arithmetic.map(x=>x[0]).join(", ") , "+")
+    if (string == null){
+        return
+    }
     if (!arithmetic.includes(string)){
         alert("請輸入正確的運算符號")
         return
@@ -98,6 +104,9 @@ function selectMode(){
 
 function selectTwo(){
     var string = prompt("選擇變數: " + Array.from(data.keys()).join(", ") + "\n 或是數字", "a")
+    if (string == null){
+        return
+    }
     if (!data.has(string) && isNaN(parseInt(string))){
         alert("請輸入正確的變數")
         return
