@@ -1,0 +1,77 @@
+#varList {
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: 180px;
+    height: 100%;
+    box-sizing: inherit;
+    background-color: #aaa;
+    z-index: 10;
+    padding: 0px 0px 0px 20px;
+}
+
+#varList.show {
+    animation: showVar 0.5s forwards;
+}
+
+#varList.close {
+    animation: closeVar 0.5s forwards;
+}
+
+#varList .varData {
+    width: 100%;
+    display: block;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+#varList .varData b:last-child {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+
+#varList .varData::after {
+    content: '';
+    width: 160px;
+    height: 2px;
+    background-color: #0002;
+    position: absolute;
+    justify-self: center;
+    margin-top: 45px;
+}
+
+#varList .varData:last-child::after {
+    height: 0px;
+}
+
+#varList #close {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 20px 20px 20px 20px;
+    cursor: pointer;
+}
+
+@keyframes showVar {
+    0%{
+        left: -200px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes closeVar {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: -200px;
+    }
+}

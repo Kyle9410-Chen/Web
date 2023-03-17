@@ -130,6 +130,10 @@ function addVar(){
     if(!newVar.status[1]) return
 
     data.set(newVar.name, newVar.value)
+
+    var element = document.getElementById("varList")
+    element.innerHTML += `<span class=\"varData\"><b>${newVar.name}</b><b>=</b><b>${newVar.value}</b><b onclick=\"removeVar(this)\">移除</b></span>`
+
     alert(`已新增變數 ${newVar.name}`)
 }
 
@@ -166,4 +170,12 @@ function removeData(element){
     var table = document.getElementById("arithmetic")
     console.log(element.parentElement.parentElement)
     table.children[0].removeChild(element.parentElement.parentElement)
+}
+
+function removeVar(element) {
+    var data = element.parentElement
+    var name = data.children[0].innerText
+    data.parentElement.removeChild(data)
+    this.data.delete(name)
+    alert("刪除成功")
 }
