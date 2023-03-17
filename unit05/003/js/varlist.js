@@ -12,7 +12,6 @@ function toggleVar() {
 
         element.classList.remove("show")
         element.classList.add("close")
-
         
     }
     else{
