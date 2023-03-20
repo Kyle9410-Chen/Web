@@ -5,3 +5,7 @@ function showSnackBar(index){
         element.classList.remove("show")
     }, 2950);
 }
+
+function back() {
+    history.back()
+}

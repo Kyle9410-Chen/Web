@@ -51,6 +51,7 @@ body {
     align-items: center;
     bottom: 70px;
     visibility: hidden;
+    z-index: 10000;
 }
 
 .snackBar a {

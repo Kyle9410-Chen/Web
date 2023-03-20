@@ -16,13 +16,19 @@
         </div>
     </div>
 
-    <form action="hw01.php" method="post">
+    <div id="content">
         <div id="dialog">
-            <span class="title"><b>請輸入字串</b></span>
-            <textarea class="inputBox" type="text" name="string"></textarea>
-            <div class="submit"><button type="submit">送出</button></div>
+            <div class="data">
+                <?php
+                    $string = $_POST["string"];
+                    echo "<p>輸入的字串 : $string</p>";
+                    echo "<p>字串長度 : ".(strlen($string))."</p>";
+                ?>
+            </div>
+            <div class="submit"><button onclick="back()">返回</button></div>
         </div>
-    </form>
+    </div>
+    
 
     <div class="snackBar">
         <a>test</a>

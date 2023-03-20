@@ -6,16 +6,55 @@ form {
     align-items: center;
 }
 
+#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+:root {
+    --angle: 0deg;
+}
+
+
 #dialog {
+    position: relative;
     width: 500px;
     height: 500px;
     background-color: #2e2e2e;
     border-radius: 10px;
-    border: 2px solid #0005;
     box-shadow: 10px 10px 20px #0005;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 10px 20px;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+#dialog::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(var(--angle), #aaffff, #0088dd, #aaffff);
+    border-radius: 10px;
+    animation: rotate 3s linear infinite
 }
 
 #dialog .title {
@@ -23,12 +62,75 @@ form {
     text-align: center;
     font-size: 2em;
     display: block;
+    z-index: 2;
 }
 
 #dialog .inputBox {
     background-color: #2e2e2e;
+    height: 100%;
     border-radius: 10px;
+    border: 1px solid #0005;
     display: block;
-    margin: 20px 20px;
-    flex-basis: 1;
+    margin-top: 10px;
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    resize: none;
+    font-size: 1.2em;
+    z-index: 101;
+}
+
+
+#dialog .inputBox::-webkit-scrollbar {
+    width: 13px;    
+    z-index: 100;
+}
+
+#dialog .inputBox::-webkit-scrollbar-track {
+    background: none;
+}
+
+#dialog .inputBox::-webkit-scrollbar-thumb {
+    background-color: #5e5e5e;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    background-clip: padding-box;
+}
+
+#dialog .inputBox:focus {
+    outline: none;
+    border: 2px solid #0005;
+}
+
+#dialog .submit {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+#dialog .submit button {
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    background-color: #0088dd;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+#dialog .submit button:hover {
+    background-color: #0088dddd;
+}
+
+#dialog .data {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 1.2em;
 }
