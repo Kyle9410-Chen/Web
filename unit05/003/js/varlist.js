@@ -12,7 +12,6 @@ function toggleVar() {
 
         element.classList.remove("show")
         element.classList.add("close")
-        
     }
     else{
         var rule = [...[...document.styleSheets].find(x => x.title == "var").cssRules].find(x => x.name == "showVar")
@@ -23,7 +22,7 @@ function toggleVar() {
         console.log(element.offsetLeft)
         rule.appendRule(`0% {left: ${element.offsetLeft}px;}`)
         console.log(rule.findRule("0%"))
-
+        
         element.classList.add("show")
         element.classList.remove("close")
     }
