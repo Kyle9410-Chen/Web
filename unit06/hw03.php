@@ -31,7 +31,7 @@
                     if(time() - strtotime($date) < 0){
                         array_push($error, "錯誤：太神奇了，你從未來來的？");
                     }
-                    if((time() - strtotime($date)/86400/365) > 120){
+                    else if(((time() - strtotime($date))/86400/365) > 120){
                         array_push($error, "錯誤：認真？你也活太久了吧");
                     }
                     else {

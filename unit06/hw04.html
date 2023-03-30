@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./004/css/main.css">
+    <link rel="stylesheet" href="./004/css/dialog.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <script src="./004/js/main.js"></script>
+    <title>乙班26號陳維基6-4</title>
+</head>
+<body>
+    <div id="header">
+        <a class="content">乙班26號陳維基6-4</a>
+        <div class="button" style="--i:0;" onclick="showSnackBar(0)">
+            <a>說明</a>
+        </div>
+    </div>
+
+    <form action="hw04.php" method="post">
+        <div id="dialog">
+            <span class="title"><b>Please Enter Personal Information</b></span>
+            <div class="inputBox">
+                <input class="input" placeholder=" " type="text" required="true" name="account" autocomplete="off">
+                <label class="name">Account</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input class="input" placeholder=" " type="password" required="true" name="password" autocomplete="off" id="password">
+                <label class="name">Password</label>
+                <p class="material-symbols-outlined showEye" onclick="showPassword(this)">visibility_off</p>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input class="input" placeholder=" " type="text" required="true" name="identity" autocomplete="off" pattern="[A-Z]{1}[0-9]{9}">
+                <label class="name">Identity Number</label>
+                <i></i>
+            </div>
+            <div class="submit"><button type="submit">Submit</button></div>
+        </div>
+    </form>
+
+    <div class="snackBar">
+        <a>密碼可以切換顯示模式喔 有許多錯誤可以被觸發，可以多方嘗試送出不同資料</a>
+    </div>
+</body>
+</html>

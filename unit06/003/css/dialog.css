@@ -125,7 +125,7 @@ form {
     border: none;
     padding: 0px 10px;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     font-size: 1.2em;
 }
 
@@ -167,7 +167,7 @@ form {
     position: absolute;
     height: 100%;
     right: 10px;
-    z-index: 2;
+    z-index: 4;
     font-size: 1.5em;
     color: #000;
     margin: 0;
