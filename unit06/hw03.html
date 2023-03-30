@@ -11,16 +11,16 @@
 
     <div id="header">
         <a class="content">乙班26號陳維基6-3</a>
-        <!-- <div class="button" style="--i:0" onclick="showSnackBar(0)">
+        <div class="button" style="--i:0;" onclick="showSnackBar(0)">
             <a>說明</a>
-        </div> -->
+        </div>
     </div>
 
     <form action="hw03.php" method="post">
         <div id="dialog">
-            <span class="title"><b>請輸入數字</b></span>
+            <span class="title"><b>Please Enter Personal Information</b></span>
             <div class="inputBox">
-                <input class="input" placeholder=" " type="text" required="true" name="acccount" autocomplete="off">
+                <input class="input" placeholder=" " type="text" required="true" name="account" autocomplete="off">
                 <label class="name">Account</label>
                 <i></i>
             </div>
@@ -35,15 +35,39 @@
                 <label class="name">BirthDay</label>
                 <i></i>
             </div>
+            <div class="radioBox">
+                <label class="data">Gender: </label>
+                <label class="radio"><input type="radio" name="gender" value="male" required><span>Male<span></label>
+                <label class="radio"><input type="radio" name="gender" value="female" required><span>Female<span></label>
+                <label class="radio"><input type="radio" name="gender" value="other" required><span>Other<span></label>
+            </div>
+            <div class="checkBox form_check">
+                <label class="data">Choose enjoy subject: </label>
+                <label class="check"><input type="checkbox" name="subject[]" value="chinese"><span>Chinese</span></label>
+                <label class="check"><input type="checkbox" name="subject[]" value="english"><span>English</span></label>
+                <label class="check"><input type="checkbox" name="subject[]" value="math"><span>Math</span></label>
+                <label class="check"><input type="checkbox" name="subject[]" value="perfession1"><span>Profession 1</span></label>
+                <label class="check"><input type="checkbox" name="subject[]" value="profession2"><span>Profession 2</span></label>
+            </div>
 
-            
-            <div class="fillBox"></div>
-            <div class="submit"><button type="submit">送出</button></div>
+            <div class="selection">
+                <label class="Data">Choose most dislike subject</label>
+                <select id="selection" name="dislikeSubject">
+                    <option style="display: none;" value=""></option>
+                    <option value="chinese">Chinese</option>
+                    <option value="english">English</option>
+                    <option value="math">Math</option>
+                    <option value="perfession1">Profession 1</option>
+                    <option value="profession2">Profession 2</option>
+                </select>
+            </div>
+
+            <div class="submit"><button type="submit" onclick="checkField()">Submit</button></div>
         </div>
     </form>
 
     <div class="snackBar">
-        <a>test</a>
+        <a>密碼可以切換顯示模式喔 有許多錯誤可以被觸發，可以多方嘗試送出不同資料</a>
     </div>
     
 </body>

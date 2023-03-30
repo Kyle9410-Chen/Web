@@ -11,9 +11,6 @@
 
     <div id="header">
         <a class="content">乙班26號陳維基6-2</a>
-        <!-- <div class="button" style="--i:0;" onclick="showSnackBar(0)">
-            <a>說明</a>
-        </div> -->
     </div>
 
     <div id="content">
@@ -24,6 +21,7 @@
                     $a = $_POST["a"];
                     $b = $_POST["b"];
                     $c = $_POST["c"];
+                    echo "<p>a = ".$a.", b = ".$b.", c = ".$c."</p>";
                     echo "<p>a + b = ".($a+$b)."</p>";
                     echo "<p>a - b = ".($a-$b)."</p>";
                     echo "<p>a * b = ".($a*$b)."</p>";

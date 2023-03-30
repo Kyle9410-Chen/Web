@@ -22,3 +22,14 @@ function showPassword(element) {
         input.type = "text"
     }
 }
+
+function checkField() {
+    var element = document.getElementById("selection")
+    if (element.value === ""){
+        alert("請填寫最不喜歡的科目")
+        return false;
+    }
+    else{
+        document.forms[0].submit()
+    }
+}

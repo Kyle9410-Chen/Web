@@ -11,9 +11,9 @@
 
     <div id="header">
         <a class="content">乙班26號陳維基6-1</a>
-        <div class="button" style="--i:0;" onclick="showSnackBar(0)">
+        <!-- <div class="button" style="--i:0;" onclick="showSnackBar(0)">
             <a>說明</a>
-        </div>
+        </div> -->
     </div>
 
     <div id="content">
@@ -22,7 +22,7 @@
                 <?php
                     $string = $_POST["string"];
                     echo "<p>輸入的字串 : $string</p>";
-                    echo "<p>字串長度 : ".(strlen($string))."</p>";
+                    echo "<p>字串長度 : ".(mb_strlen($string))."</p>";
                 ?>
             </div>
             <div class="submit"><button onclick="back()">返回</button></div>
