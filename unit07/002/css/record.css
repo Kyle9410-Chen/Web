@@ -1,0 +1,65 @@
+#recordList {
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    top: 0px;
+    box-sizing: inherit;
+    background-color: #3e3e3e;
+    transform: translateX(-250px);
+    transition: transform ease 0.5s;
+    overflow-y: auto;
+}
+
+#recordList.show {
+    transform: translateX(0px);
+}
+
+#recordList p.title {
+    position: relative;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 10px 40px 10px;
+}
+
+#recordList span {
+    position: absolute;
+    font-size: 2em;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+#recordList div {
+    padding: 0px 10px
+}
+
+#recordList div p {
+    margin: 5px 0px;
+    font-size: 1.2em;
+}
+
+#recordList div:not(:last-child):after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 10px 0px;
+    background-color: #0005;
+}
+
+#recordList::-webkit-scrollbar {
+    position: absolute;
+    right: 0;
+    width: 10px;
+}
+
+#recordList::-webkit-scrollbar-track {
+    background: none;
+}
+
+#recordList::-webkit-scrollbar-thumb {
+    background-color: #5e5e5e;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    background-clip: padding-box;
+}

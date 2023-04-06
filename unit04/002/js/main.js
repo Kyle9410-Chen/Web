@@ -251,6 +251,7 @@ function sortData(index, element) {
         })
         tr.appendChild(td)
         table.appendChild(tr)
+
     }
 }
 
@@ -260,4 +261,8 @@ function showSnackbar(){
     setTimeout(() => {
         element.className = ""
     }, 3000)
+}
+
+func = () => {
+
 }
