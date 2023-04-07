@@ -22,7 +22,7 @@
                     $pwd = $_POST["password"];
                     $date = $_POST["birthDay"];
                     $gender = $_POST["gender"];
-                    $subject = $_POST["subject"];
+                    $subject = $_POST['subject'] ?? null;
                     $dislikeSubject = $_POST["dislikeSubject"];
                     $error = array();
 
@@ -41,7 +41,10 @@
                     echo "<p>Enjoy Subjects: ";
 
                     try{
-                        foreach($subject as $key => $value){
+                        if($subject == null){
+                            throw new Exception("Error Processing Request", 1);
+                        }
+                        foreach($subject as $value){
                             if ($dislikeSubject == $value){
                                 array_push($error, "錯誤：你喜歡你討厭的東西，你好奇怪喔");
                             }

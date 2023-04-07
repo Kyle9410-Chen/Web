@@ -180,11 +180,7 @@ form {
     cursor: pointer;
 }
 
-#dialog .inputBox .input:focus ~ .showEye {
-    transform: scaleY(1);
-}
-
-#dialog .inputBox .input:not(:placeholder-shown) ~ .showEye {
+#dialog .inputBox .input:focus ~ .showEye , #dialog .inputBox .input:not(:placeholder-shown) ~ .showEye {
     transform: scaleY(1);
 }
 

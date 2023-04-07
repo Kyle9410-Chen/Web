@@ -27,9 +27,9 @@ function checkField() {
     var element = document.getElementById("selection")
     if (element.value === ""){
         alert("請填寫最不喜歡的科目")
-        return false;
+        return false
     }
     else{
-        document.forms[0].submit()
+        return true
     }
 }
