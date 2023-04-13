@@ -1,0 +1,90 @@
+#clock {
+    width: 500px;
+    height: 500px;
+    background-color: #2e2e2e;
+    border-radius: 50%;
+    box-shadow: 10px 40px 60px #0005;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #fff;
+    background-color: #2e2e2e;
+    z-index: 100;
+}
+
+#clock span {
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    color: #fff;
+    transform: rotate(calc(30deg * var(--i)));
+}
+
+#clock span b {
+    font-size: 2em;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+.circle {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 2px solid #0005;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+
+#minute {
+    width: 300px;
+    height: 300px;
+    z-index: 9;
+}
+
+#hour {
+    width: 250px;
+    height: 250px;
+    z-index: 8;
+}
+
+.circle i {
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background-color: var(--color);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.7);
+}
+
+.circle:nth-child(1) i {
+    width: 2px;
+}
+
+.circle:nth-child(2) i {
+    width: 6px;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color);
+    box-shadow: 0 0 20px var(--color);
+}

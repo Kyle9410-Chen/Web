@@ -78,8 +78,6 @@
             <div class="submit"><button onclick="back()">Back</button></div>
         </div>
     </div>
-    
-
     <div class="snackBar">
         <a>test</a>
     </div>

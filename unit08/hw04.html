@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./004/css/main.css">
+    <link rel="stylesheet" href="./004/css/dialog.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <script src="./004/js/main.js"></script>
+    <title>乙班26號陳維基8-4</title>
+</head>
+<body>
+
+    <div id="header">
+        <a class="content">乙班26號陳維基8-4</a>
+        <div class="button" style="--i:0;" onclick="showSnackBar(0)">
+            <a>說明</a>
+        </div>
+    </div>
+
+    <form action="hw04.php" method="post" onsubmit="return checkField()">
+        <div id="dialog">
+            <span class="title"><b>Please Enter Personal Information</b></span>
+            <div class="inputBox">
+                <input id="account" class="input" placeholder=" " type="text" name="account" autocomplete="off">
+                <label class="name">Account</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="password" class="input" placeholder=" " type="password" name="password" autocomplete="off" id="password">
+                <label class="name">Password</label>
+                <p class="material-symbols-outlined showEye" onclick="showPassword(this)">visibility_off</p>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="id" class="input" placeholder=" " type="text" name="id" autocomplete="off">
+                <label class="name">Identity Number</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="mail" class="input" placeholder=" " type="text" name="mail" autocomplete="off">
+                <label class="name">E-mail</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="date" class="input date" type="date" name="birthDay" autocomplete="off">
+                <label class="name">BirthDay</label>
+                <i></i>
+            </div>
+            <div class="radioBox">
+                <label class="data">Gender: </label>
+                <label class="radio"><input type="radio" name="gender" value="male"><span>Male<span></label>
+                <label class="radio"><input type="radio" name="gender" value="female"><span>Female<span></label>
+                <label class="radio"><input type="radio" name="gender" value="other"><span>Other<span></label>
+            </div>
+            <div class="checkBox form_check">
+                <label class="data">Choose enjoy subject: </label>
+                <label class="check"><input type="checkbox" name="subject[]" value="chinese"><span>Chinese</span></label>
+                <label class="check"><input type="checkbox" name="subject[]" value="english"><span>English</span></label>
+                <label class="check"><input type="checkbox" name="subject[]" value="math"><span>Math</span></label>
+                <label class="check"><input type="checkbox" name="subject[]" value="perfession1"><span>Profession 1</span></label>
+                <label class="check"><input type="checkbox" name="subject[]" value="profession2"><span>Profession 2</span></label>
+            </div>
+
+            <div class="selection">
+                <label class="Data">Choose most dislike subject</label>
+                <select id="selection" name="dislikeSubject">
+                    <option style="display: none;" value=""></option>
+                    <option value="chinese">Chinese</option>
+                    <option value="english">English</option>
+                    <option value="math">Math</option>
+                    <option value="perfession1">Profession 1</option>
+                    <option value="profession2">Profession 2</option>
+                </select>
+            </div>
+
+            <div class="submit"><button type="submit">Submit</button></div>
+        </div>
+    </form>
+
+    <div class="snackBar">
+        <a>密碼可以切換顯示模式喔 有許多錯誤可以被觸發，可以多方嘗試送出不同資料</a>
+    </div>
+    
+</body>
+</html>
