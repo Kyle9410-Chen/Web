@@ -3,16 +3,21 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./004/css/main.css">
     <link rel="stylesheet" href="./004/css/dialog.css">
+    <link rel="stylesheet" href="./004/css/alert.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
     <script src="./004/js/main.js"></script>
+    <script src="./004/js/alert.js"></script>
     <title>乙班26號陳維基8-4</title>
 </head>
 <body>
 
     <div id="header">
         <a class="content">乙班26號陳維基8-4</a>
-        <div class="button" style="--i:0;" onclick="showSnackBar(0)">
-            <a>說明</a>
+        <!-- <div class="button" style="--i:0;" onclick="showSnackBar(0)">
+            <a>Info</a>
+        </div> -->
+        <div class="button" style="--i:0;" onclick="newAlert('test', 'test', 'warning')">
+            <a>Addtest</a>
         </div>
     </div>
 
@@ -76,9 +81,13 @@
         </div>
     </form>
 
-    <div class="snackBar">
-        <a>密碼可以切換顯示模式喔 有許多錯誤可以被觸發，可以多方嘗試送出不同資料</a>
+    <div id="alert">
+
     </div>
+
+    <!-- <div class="snackBar">
+        <a>密碼可以切換顯示模式喔 有許多錯誤可以被觸發，可以多方嘗試送出不同資料</a>
+    </div> -->
     
 </body>
 </html>

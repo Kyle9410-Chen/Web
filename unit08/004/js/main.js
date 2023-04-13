@@ -62,7 +62,10 @@ function checkField() {
     var disSubject = document.getElementById("selection")
 
     if (account.value == ""){
-        alert("Please fill in Account")
+        newAlert({
+            "title" : "System",
+            "content" : "Please fill in Account"
+        })
         return false
     }
 

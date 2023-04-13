@@ -1,0 +1,32 @@
+#alert {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    margin-right: 20px;
+}
+
+#alert .content {
+    position: relative;
+    display: flexbox;
+    right: 0px;
+    width: 20em;
+    margin-bottom: 20px;
+    padding: 10px;
+    transition-property: right;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+#alert .content::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#alert .content.close {
+    right: -25em;
+}
