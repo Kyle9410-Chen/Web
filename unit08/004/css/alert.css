@@ -6,9 +6,12 @@
 }
 
 #alert .content {
+    --alert_before_width : 100%;
+    --alert_before_transition_duration : 3s;
+
     position: relative;
     display: flexbox;
-    right: 0px;
+    right: -25em;
     width: 20em;
     margin-bottom: 20px;
     padding: 10px;
@@ -19,12 +22,19 @@
 
 #alert .content::before {
     content: "";
-    width: 100%;
+    width: var(--alert_before_width);
     height: 2px;
     background-color: #fff;
     position: absolute;
     bottom: 0px;
     left: 0px;
+    transition-property: width;
+    transition-timing-function: linear;
+    transition-duration: var(--alert_before_transition_duration);
+}
+
+#alert .content.show {
+    right: 0px;
 }
 
 #alert .content.close {

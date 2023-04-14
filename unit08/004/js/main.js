@@ -63,8 +63,12 @@ function checkField() {
 
     if (account.value == ""){
         newAlert({
-            "title" : "System",
-            "content" : "Please fill in Account"
+            title : "test",
+            content : "Please fill in Account",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
         })
         return false
     }
