@@ -1,0 +1,30 @@
+#content {
+    width: 100%;
+    height: calc(100% - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content a {
+    display: inline-block;
+    font-size: 8em;
+    color: #fff;
+
+    transition: color 0.3s linear, transform 0.2s ease-in-out;
+}
+
+#content a.fly {
+    transform: translateY(-150px)
+}
+
+#content a.whoosh_left {
+    transform: translateX(-2000px) rotateZ(4000deg);
+    transform-origin: center;
+}
+
+
+#content a.whoosh_right {
+    transform: translateX(2000px) rotateZ(-4000deg);
+    transform-origin: center;
+}

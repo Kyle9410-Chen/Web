@@ -9,12 +9,15 @@ var defaultOption = {
     mode : "error",
     during : 3000,
     behavior : {
-        smoothIn : false
+        smoothIn : false,
+        float : true
     },
 }
 
 function newAlert(setOption){
     var option = {...defaultOption, ...setOption}
+    option.behavior = {...defaultOption.behavior, ...setOption.behavior}
+
     var alert = document.getElementById("alert")
     var newContent = document.createElement("div")
     newContent.classList.add("content")
@@ -30,7 +33,36 @@ function newAlert(setOption){
     }
     else{
         newContent.classList.add("show")
-    }        
+    }
+
+    if(option.behavior.float){
+        newContent.addEventListener("mousemove", (e) => {
+            
+            rect = newContent.getBoundingClientRect()
+            x = rect.left
+            y = rect.top
+            c_x = (rect.right - rect.left) / 2
+            c_y = (rect.bottom - rect.top) / 2
+            m_x = e.pageX - x - window.scrollX
+            m_y = e.pageY - y - window.scrollY
+
+            console.log(c_x, c_y, m_x, m_y, (m_x - c_x)/c_x*10, (c_y - m_y)/c_y*10);
+
+            newContent.style.transform = `perspective(50em) rotateY(${(m_x - c_x)/c_x*15}deg) rotateX(${(c_y - m_y)/c_y*15}deg)`
+        })
+
+        newContent.addEventListener("mouseout", () => {
+            newContent.style.transform = ""
+        })
+
+        newContent.addEventListener("click", () => {
+            newContent.classList.remove("show")
+            newContent.classList.add("close")
+            setTimeout(() => {
+                alert.removeChild(newContent)
+            }, 500);
+        })
+    }
 
     setTimeout(() => {
         newContent.style.setProperty("--alert_before_width", "0")

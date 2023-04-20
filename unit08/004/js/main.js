@@ -63,7 +63,6 @@ function checkField() {
 
     if (account.value == ""){
         newAlert({
-            title : "test",
             content : "Please fill in Account",
             during : 5000,
             behavior : {
@@ -74,38 +73,81 @@ function checkField() {
     }
 
     if (password.value === ""){
-        alert("Please fill in Password")
+        newAlert({
+            content : "Please fill in Password",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
 
     if (id.value === ""){
-        alert("Please fill in Identity Number")
+        newAlert({
+            content : "Please fill in Identity Number",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
 
     if (mail.value === ""){
-        alert("Please fill in E-mail")
+        newAlert({
+            content : "Please fill in E-mail",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
 
     if (date.value === ""){
-        alert("Please fill in Birthday")
+        newAlert({
+            content : "Please fill in Birthday",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
 
     if (!gender.some(x => x.checked)){
-        alert("Please fill in Gender")
+        newAlert({
+            content : "Please fill in Gender",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
     
 
     if (disSubject.value === ""){
-        alert("Please fill in this most dislikest subject")
+        newAlert({
+            content : "Please fill in the most dislikest subject",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
 
     if (!/[A-Z]{1}[1-2]{1}[0-9]{8}/.test(id.value)){
-        alert("Identity Number format doesn't match")
+        newAlert({
+            content : "Identity Number format doesn't match",
+            mode: "warning",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
 
@@ -122,12 +164,26 @@ function checkField() {
     }
     var last = parseInt(id.value.slice(-1))
     if (!((num + last) % 10 == 0)){
-        alert("Identity Number format doesn't match")
+        newAlert({
+            content : "Identity Number format doesn't match",
+            mode: "warning",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
 
     if (!/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(mail.value)){
-        alert("E-mail format doesn't match")
+        newAlert({
+            content : "E-mail format doesn't match",
+            mode: "warning",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
         return false
     }
 

@@ -15,9 +15,8 @@
     width: 20em;
     margin-bottom: 20px;
     padding: 10px;
-    transition-property: right;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
+    transition: right 0.5s ease, transform 0.2s ease;
+    perspective-origin: 50% 50%;
 }
 
 #alert .content::before {
