@@ -20,10 +20,13 @@ function newAlert(setOption){
 
     var alert = document.getElementById("alert")
     var newContent = document.createElement("div")
-    newContent.classList.add("content")
-    newContent.innerHTML += `<b>${option.title}</b>`
-    newContent.innerHTML += `<p>${option.content}</p>`
-    newContent.style.backgroundColor = modeColor[option.mode]
+    var contentInner = document.createElement("div")
+    newContent.classList.add("border")
+    contentInner.classList.add("content")
+    contentInner.innerHTML += `<b>${option.title}</b>`
+    contentInner.innerHTML += `<p>${option.content}</p>`
+    contentInner.style.backgroundColor = modeColor[option.mode]
+    newContent.appendChild(contentInner)
     alert.appendChild(newContent)
 
     if(option.behavior.smoothIn){
@@ -38,7 +41,7 @@ function newAlert(setOption){
     if(option.behavior.float){
         newContent.addEventListener("mousemove", (e) => {
             
-            rect = newContent.getBoundingClientRect()
+            var rect = newContent.getBoundingClientRect()
             x = rect.left
             y = rect.top
             c_x = (rect.right - rect.left) / 2
@@ -46,13 +49,11 @@ function newAlert(setOption){
             m_x = e.pageX - x - window.scrollX
             m_y = e.pageY - y - window.scrollY
 
-            console.log(c_x, c_y, m_x, m_y, (m_x - c_x)/c_x*10, (c_y - m_y)/c_y*10);
-
-            newContent.style.transform = `perspective(50em) rotateY(${(m_x - c_x)/c_x*15}deg) rotateX(${(c_y - m_y)/c_y*15}deg)`
+            contentInner.style.transform = `perspective(50em) rotateY(${(m_x - c_x)/c_x*15}deg) rotateX(${(c_y - m_y)/c_y*15}deg)`
         })
 
         newContent.addEventListener("mouseout", () => {
-            newContent.style.transform = ""
+            contentInner.style.transform = ""
         })
 
         newContent.addEventListener("click", () => {
