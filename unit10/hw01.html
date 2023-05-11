@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="./001/css/info.css">     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./001/main.js"></script>
-    <title>乙班26號陳維基10-2</title>
+    <title>乙班26號陳維基10-1</title>
 </head>
 <body>
     <div id="background"></div>
 
     <div id="header">
-        <a class="content">乙班26號陳維基10-2</a>
+        <a class="content">乙班26號陳維基10-1</a>
         <div class="mark" onclick="onClickMark(0)">
             <a class="mark_content">國小</a>
         </div>
@@ -31,7 +31,7 @@
     </div>
 
     <div id="info_background">
-        <div class="info">
+        <div class="info" style="--i:1;">
             <img src="./001/source/02.jpg" class="img1" style="--i:1;">
             <section class="block right">
                 <p class="title">國小</p>
@@ -45,7 +45,7 @@
                 <a class="school" href="https://www.gdps.ntpc.edu.tw/">金龍國小</a>
             </section>
         </div>
-        <div class="info">
+        <div class="info" style="--i:2;">
             <section class="block right">
                 <p class="title">國中</p>
                 <p class="content">
@@ -61,7 +61,7 @@
             </section>
             <img src="./001/source/02.jpg" class="img2" style="--i:2;">
         </div>
-        <div class="info">
+        <div class="info" style="--i:3;">
             <img src="./001/source/02.jpg" class="img3" style="--i:3;">
             <section class="block right">
                 <p class="title">高中</p>
@@ -77,7 +77,7 @@
                 <a class="school" href="https://www.taivs.tp.edu.tw/">大安高工</a>
             </section>
         </div>
-        <div class="info">
+        <div class="info" style="--i:4;">
             <section class="block right">
                 <p class="title">校外</p>
                 <p class="content">
@@ -99,15 +99,16 @@
         $('#main .content').fadeIn(1000).delay(1000).removeClass("hidden")
         $('section').hide()
 
-        $('img').click(function(){
+        $('.info').mouseenter(function(){
             let index = $(this).css("--i")
             let curElement = $(`.info:nth-child(${index}) section`)
             if (curElement.is(":hidden")){
                 curElement.slideDown("fast")
             }
-            else{
-                curElement.slideUp("fast")
-            }
+        })
+
+        $('img').click(function(){
+            $(this).css("scale", "1.2")
         })
     </script>
 </body>

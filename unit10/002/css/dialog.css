@@ -1,0 +1,124 @@
+#colorDialog {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background-color: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+#colorDialog .dialog {
+    width: 1000px;
+    height: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    scale: 0;
+    transition: scale 0.2s;
+}
+
+#colorDialog .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#colorDialog p {
+    background-color: #e2e2e2;
+    width: 100%;
+    padding: 25px;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    top: 0px;
+}
+
+#colorDialog .close {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    right: 20px;
+    cursor: pointer;
+}
+
+#colorDialog table {
+    display: block;
+    margin: 20px 20px 0px 20px;
+    border-collapse: collapse;
+}
+
+#colorDialog td {
+    width: 100%;
+    border-left: solid 2px #0001;
+    padding: 10px 5px 10px 40px;
+}
+
+#colorDialog td:first-child{
+    border-left: none;
+}
+
+#colorDialog table tr:not(:last-child) {
+    border-bottom: solid 2px #0001;
+}
+
+#colorDialog .inputRange {
+    display: block;
+    margin: 10px 20px 0px 20px;
+}
+
+#colorDialog a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#colorDialog input{
+    appearance: none;
+    position: relative;
+    box-sizing: inherit;
+    top: 10px;
+    width: calc(100% - 40px);
+    padding: 0;
+    margin: 0 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #e1e1e1;
+    outline: none;
+    opacity: 0.7;
+}
+
+#colorDialog input:hover {
+    opacity: 1;
+}
+
+#colorDialog input::-webkit-slider-thumb {   
+    -webkit-appearance: none;
+    appearance: none; 
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #0088ff;
+}
+
+#colorDialog input::-webkit-slider-thumb:hover {   
+    width: 30px;
+    height: 30px;
+}
+
+#colorDialog #newColor{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#colorDialog #newColor a {
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #2e2e2e;
+    border-radius: 5px;
+}

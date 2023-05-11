@@ -36,7 +36,7 @@
                         echo "<p>a % c = ?</p>";
                     }
                     echo "<p>a + 1 = ".($a+1)."</p>";
-                    echo "<p>c + 1 = ".($c+1)."</p>";
+                    echo "<p>c - 1 = ".($c-1)."</p>";
                 ?>
             </div>
             <div class="submit"><button onclick="back()">返回</button></div>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./002/css/main.css">
+    <link rel="stylesheet" href="./002/css/dialog.css">
+    <link rel="stylesheet" href="./002/css/content.css">
+    <script src="./002/js/main.js"></script>
+    <script src="./002/js/color.js"></script>
+    <script src="./002/js/dialog.js"></script>
+    <title>乙班26號陳維基10-2</title>
+</head>
+<body>
+
+    
+    <div id="header">
+        <a class="content">乙班26號陳維基10-2</a>
+        <div class="button" style="--i:0;" onclick="showSnackBar(0)">
+            <a>說明</a>
+        </div>
+        <div class="button" style="--i:1;" onclick="showColorDialog()">
+            <a>調色盤</a>
+        </div>
+    </div>
+
+    <p id="content">我是文字~</p>
+
+    <div class="snackBar">
+        <a>點擊 "調色盤" 開啟調色介面</a>
+    </div>
+
+    <div id="colorDialog">
+        <div class="dialog">
+            <div class="header">
+                <span class="material-symbols-outlined close" onclick="closeColorDialog()">close</span>
+                <p class="title">調色盤</p>
+            </div>
+
+            <table>
+                <tr>
+                    <td>背景</td>
+                    <td style="background-color:#f00" onclick="colorChangeBG(this)"></td>
+                    <td style="background-color:#f80" onclick="colorChangeBG(this)"></td>
+                    <td style="background-color:#ff0" onclick="colorChangeBG(this)"></td>
+                    <td style="background-color:#0f0" onclick="colorChangeBG(this)"></td>
+                    <td style="background-color:#00f" onclick="colorChangeBG(this)"></td>
+                    <td style="background-color:#80c" onclick="colorChangeBG(this)"></td>
+                    <td style="background-color:#f0f" onclick="colorChangeBG(this)"></td>
+                    <td style="background-color:#000" onclick="colorChangeBG(this)"></td>
+                    <td style="background-color:#fff" onclick="colorChangeBG(this)"></td>
+                </tr>
+                <tr>
+                    <td>文字</td>
+                    <td style="background-color:#f00" onclick="colorChangeText(this)"></td>
+                    <td style="background-color:#f80" onclick="colorChangeText(this)"></td>
+                    <td style="background-color:#ff0" onclick="colorChangeText(this)"></td>
+                    <td style="background-color:#0f0" onclick="colorChangeText(this)"></td>
+                    <td style="background-color:#00f" onclick="colorChangeText(this)"></td>
+                    <td style="background-color:#80c" onclick="colorChangeText(this)"></td>
+                    <td style="background-color:#f0f" onclick="colorChangeText(this)"></td>
+                    <td style="background-color:#000" onclick="colorChangeText(this)"></td>
+                    <td style="background-color:#fff" onclick="colorChangeText(this)"></td>
+                </tr>
+            </table>
+
+            <div class="inputRange">
+                <a>R</a><input id="RInput" type="range" min="0" max="255" value="100">
+            </div>
+            <div class="inputRange">
+                <a>G</a><input id="GInput" type="range" min="0" max="255" value="100">
+            </div>
+            <div class="inputRange">
+                <a>B</a><input id="BInput" type="range" min="0" max="255" value="100">
+            </div>
+
+            <div id="newColor" onclick="newColor()">
+                <a>新增</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
