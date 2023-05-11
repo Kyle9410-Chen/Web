@@ -156,7 +156,7 @@ function sortData(index, element) {
         d.style.border = "none"
     }
 
-    element.style.border = sortMode == 1? "3px solid #0ff" : "3px solid #ff0"
+    element.style.border = sortMode == 1? "px solid #0ff" : "3px solid #ff0"
 
     var sortedData = []
 
