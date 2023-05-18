@@ -7,7 +7,15 @@
     <script src="./001/js/clock.js"></script>
     <title>乙班26號陳維基5-1</title>
 </head>
-<body>
+<body <?php
+    $second = date('s');
+    if ($second % 2 == 0){
+        echo "style=\"background-color:#f88\"";
+    }
+    else{
+        echo "style=\"background-color:#88f\"";
+    }
+?>>
     <div id="header">
         <a class="content">乙班26號陳維基5-1</a>
     </div>
@@ -17,10 +25,10 @@
             $second = date('s');
 
             if ($second % 2 == 0){
-                echo "<p id=\"phpClock\" style=\"color:#f55;\">載入時的伺服器時間: ".date('r')."</p>";
+                echo "<p id=\"phpClock\" style=\"color:#55f;\">載入時的伺服器時間: ".date('r')."</p>";
             }
             else{
-                echo "<p id=\"phpClock\" style=\"color:#55f;\">載入時的伺服器時間: ".date('r')."</p>";
+                echo "<p id=\"phpClock\" style=\"color:#f55;\">載入時的伺服器時間: ".date('r')."</p>";
             }
         ?>
 

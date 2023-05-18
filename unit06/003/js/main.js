@@ -25,11 +25,13 @@ function showPassword(element) {
 
 function checkField() {
     var element = document.getElementById("selection")
+    var subject = [...document.getElementsByClassName("check")]
     if (element.value === ""){
         alert("請填寫最不喜歡的科目")
         return false
     }
-    else{
-        return true
+    if (!subject.some(x => x.children[0].checked)){
+        alert("請至少填寫一項喜歡的科目")
+        return false
     }
 }
