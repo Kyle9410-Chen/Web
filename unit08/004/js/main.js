@@ -59,6 +59,7 @@ function checkField() {
     var mail = document.getElementById("mail")
     var date = document.getElementById("date")
     var gender = [...document.querySelectorAll(".radio input")]
+    var subject = [...document.getElementsByClassName("check")]
     var disSubject = document.getElementById("selection")
 
     if (account.value == ""){
@@ -119,6 +120,17 @@ function checkField() {
     if (!gender.some(x => x.checked)){
         newAlert({
             content : "Please fill in Gender",
+            during : 5000,
+            behavior : {
+                smoothIn : true
+            }
+        })
+        return false
+    }
+
+    if(!subject.some(x => x.children[0].checked)){
+        newAlert({
+            content : "Please fill in Like subject",
             during : 5000,
             behavior : {
                 smoothIn : true
