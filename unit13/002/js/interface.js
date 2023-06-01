@@ -49,6 +49,23 @@ function refresh() {
 
         newData(index, x.studentName, x.seatNo, x.chinese, x.math, x.english, x.pro1, x.pro2, (x.chinese + x.english + x.math + x.pro1 + x.pro2), Math.round((x.chinese + x.english + x.math + x.pro1 + x.pro2) / 5, 2))
         
+        if (x.chinese < 60){
+            td3.classList.add("bad")
+        }
+        if (x.math < 60){
+            td4.classList.add("bad")
+        }
+        if (x.english < 60){
+            td5.classList.add("bad")
+        }
+        if (x.pro1 < 60){
+            td6.classList.add("bad")
+        }
+        if (x.pro2 < 60){
+            td7.classList.add("bad")
+        }
+
+
         tr.appendChild(td1)
         tr.appendChild(td2)
         tr.appendChild(td3)
