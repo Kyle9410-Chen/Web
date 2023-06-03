@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    var password = "<?php echo ($_POST["password"] ?? ""); ?>"
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +17,6 @@
     <script src="./001/js/data.js"></script>
     <script src="./001/js/interface.js"></script>
 </head>
-
 <body>
     <div id="header">
         <a class="content">乙班26號陳維基14-1</a>
@@ -41,9 +43,9 @@
         </table>
     </div>
 
-    <div class="dialogBackground" <?php
+    <div class="dialogBackground"<?php
         try{
-            if ($_POST["password"] ?? "" == "admin123"){
+            if (($_POST["password"] ?? "") == "admin123"){
                 echo "style=\"visibility:hidden\"";
             }
         }
@@ -52,14 +54,13 @@
         }
     ?>
     >
-    <?php 
+    <?php
         try{
-            if ($_POST["password"] ?? "" == "admin123"){
-                echo "<script>var password=".$_POST["password"]."</script>";
+            if (($_POST["password"] ?? "") == "admin123"){
+                echo "<script>console.log(\"".$_POST["password"]."\")</script>";
             }
         }
         catch (Exception $err) {
-
         }
     ?>
         <div id="login" class="dialog">

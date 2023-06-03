@@ -15,7 +15,6 @@ function newData(id, name, no, chinese, math, english, society, science, total, 
         total: total,
         average: average
     })
-    console.log(data)
 }
 
 function sortData(index, element){
@@ -72,7 +71,6 @@ function sortData(index, element){
     if (index == 9){
         data = data.sort((a, b) => sortMode*(a.average - b.average))
     }
-    console.log(data)
 
 
     var table = document.getElementById("table")
@@ -106,7 +104,6 @@ function sortData(index, element){
 }
 
 window.onscroll = function checkScorll(){
-    console.log(scrollY)
     var element = document.getElementById("back")
     if(window.scrollY != 0){
         element.style.visibility = "visible"

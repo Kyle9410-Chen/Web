@@ -1,5 +1,5 @@
 <?php
-    if ($_POST["password"] ?? "" == "admin123"){
+    if (($_POST["password"] ?? "") == "admin123"){
         $con = new mysqli("localhost", "cbs26", "136210@Info", "111_cbs26");
         if ($con -> connect_error) die($con -> connect_errno);
     
@@ -11,11 +11,8 @@
         if ($_POST["mode"] == 0){
             $sql = "SELECT * FROM scoreTable;";
         }
-        else if ($_POST["mode"] == "defaultOrder"){
-            $sql = "SELECT * FROM scoreTable ORDER BY (chinese + math + english + pro1 + pro2) DESC, (pro1 + pro2) DESC, pro2 DESC, pro1 DESC, math DESC, english DESC, chinese DESC;";
-        }
         else if ($_POST["mode"] == 1){
-            $sql = "delete * from scoretable where seatNo = ".$_POST["id"].";";
+            $sql = "DELETE FROM scoreTable WHERE seatNo = ".$_POST["id"].";";
         }
     
         $exe = $con -> prepare($sql);

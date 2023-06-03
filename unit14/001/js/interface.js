@@ -1,5 +1,4 @@
 var db = []
-
 window.onload = getAll()
 
 function getAll() {
@@ -9,9 +8,11 @@ function getAll() {
     var req = new XMLHttpRequest()
     var url = "select.php"
     req.open("POST", url, true)
+    console.log(password)
 
     req.onreadystatechange = () => {
         if (req.readyState == 4 && req.status == 200){
+            console.log(req.responseText)
             var res = JSON.parse(req.responseText)
             try{
                 if (res.state = "fail"){
@@ -29,7 +30,9 @@ function getAll() {
 
 function deleteRequest(id) {
     var data = new FormData()
-    data.append("data", id)
+    console.log(id)
+    console.log(password)
+    data.append("id", id)
     data.append("mode", 1)
     data.append("password", password)
     var req = new XMLHttpRequest()
@@ -58,7 +61,6 @@ function refresh() {
         }
         table.children[0].removeChild(element)
     }
-    console.log(db)
 
     index = 1
     for (const x of db) {
