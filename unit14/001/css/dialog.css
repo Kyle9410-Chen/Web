@@ -8,6 +8,12 @@
     align-items: center;
     top: 0;
     left: 0;
+    z-index: 100;
+    transition: visibility 0.25s ease;
+}
+
+.dialogBackground.close {
+    visibility: hidden;
 }
 
 .dialog .buttonParent{
@@ -17,4 +23,119 @@
     justify-content: center;
     position: absolute;
     bottom: 20px;
+}
+
+.dialog .buttonParent .divider {
+    width: 10%;
+}
+
+.dialog {
+    position: fixed;
+    z-index: 101;
+    transform: scale(1);
+    transition: transform 0.25s ease;
+}
+
+.dialog.close {
+    transform: scale(0);
+}
+
+.dialog button {
+    text-align: center;
+    width: 15%;
+    padding: 10px 20px;
+    margin: 0px 10px;
+    font-size: 1.2em;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    background-color: #43e2ff;
+    user-select: none;
+    cursor: pointer;
+    display: inline;
+}
+
+.dialog button.close {
+    background-color: #ff4343;
+}
+
+
+.dialog .submit button:hover {
+    background-color: #43e2ffdd;
+}
+
+.dialog .inputBox {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.dialog .inputBox i {
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #43e2ff;
+    border-radius: 10px;
+    transition: height 0.25s ease;
+}
+
+.dialog .inputBox .input:focus ~ i{
+    height: 100%;
+}
+
+.dialog .inputBox #password:focus ~ i{
+    height: 100%;
+}
+
+.dialog .inputBox .input:not(:placeholder-shown) ~ i{
+    height: 100%;
+}
+
+.dialog .inputBox .input {
+    appearance: none;
+    background-color: #0000;
+    border: none;
+    padding: 0px 10px;
+    width: 100%;
+    z-index: 3;
+    font-size: 1.2em;
+}
+
+.dialog .inputBox .input::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+.dialog .inputBox .input:focus{
+    appearance: none;
+    border: none;
+    outline: none;
+}
+
+.dialog .inputBox .hint {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    font-size: 1.2em;
+    transition: top 0.25s, left 0.25s, color 0.25s, font-size 0.25s;
+}
+
+
+.dialog .inputBox .input:focus ~ .hint {
+    top: -25px;
+    left: 5px;
+    color: #43e2ff;
+    font-size: 1em;
+}
+
+.dialog .inputBox .input:not(:placeholder-shown) ~ .hint {
+    top: -25px;
+    left: 5px;
+    color: #43e2ff;
+    font-size: 1em;
 }

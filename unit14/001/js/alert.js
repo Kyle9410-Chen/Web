@@ -55,8 +55,6 @@ function newAlert(setOption){
         newContent.addEventListener("mouseout", () => {
             contentInner.style.transform = ""
         })
-
-        
     }
 
     newContent.addEventListener("click", () => {

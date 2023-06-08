@@ -1,6 +1,7 @@
 var data = []
 var sortMode = 1
 var sortType = -1
+var mode = 1;
 
 function newData(id, name, no, chinese, math, english, society, science, total, average){
     data.push({
@@ -118,5 +119,33 @@ function toTop(){
 }
 
 function deleteData(element){
+    db.splice(getComputedStyle(element).getPropertyValue("--i") - 1, 1)
+    console.log(db)
     deleteRequest(element.parentNode.parentNode.children[1].innerText)
+}
+
+function edit(element, index){
+    mode = 2
+    document.getElementById("studentName").value = db[index].studentName
+    document.getElementById("seatNo").value = db[index].seatNo
+    document.getElementById("chinese").value = db[index].chinese
+    document.getElementById("math").value = db[index].math
+    document.getElementById("english").value = db[index].english
+    document.getElementById("pro1").value = db[index].pro1
+    document.getElementById("pro2").value = db[index].pro2
+    document.getElementById("seatNo").setAttribute("readonly", "")
+    toggleDialog("editBox", "editBoxBackground")
+}
+
+function insert(){
+    mode = 3
+    document.getElementById("studentName").value = ""
+    document.getElementById("seatNo").value = ""
+    document.getElementById("chinese").value = ""
+    document.getElementById("math").value = ""
+    document.getElementById("english").value = ""
+    document.getElementById("pro1").value = ""
+    document.getElementById("pro2").value = ""
+    toggleDialog("editBox", "editBoxBackground")
+    document.getElementById("seatNo").removeAttribute("readonly")
 }

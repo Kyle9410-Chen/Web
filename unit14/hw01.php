@@ -10,17 +10,22 @@
     <link rel="stylesheet" href="./001/css/main.css">
     <link rel="stylesheet" href="./001/css/content.css">
     <link rel="stylesheet" href="./001/css/dialog.css">
-    <link rel="stylesheet" href="./001/css/login.css">
+    <link rel="stylesheet" href="./001/css/box.css">
+    <link rel="stylesheet" href="./001/css/alert.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="./001/js/main.js"></script>
     <script src="./001/js/data.js"></script>
+    <script src="./001/js/alert.js"></script>
     <script src="./001/js/interface.js"></script>
 </head>
 <body>
     <div id="header">
         <a class="content">乙班26號陳維基14-1</a>
         <div class="button" style="--i:0;" onclick="showSnackBar(0)">
+            <a>說明</a>
+        </div>
+        <div class="button" style="--i:1;" onclick="insert()">
             <a>說明</a>
         </div>
     </div>
@@ -65,14 +70,61 @@
     ?>
         <div id="login" class="dialog">
             <div class="inputBox">
-                <input id="pwd" class="input" placeholder=" " type="text" autocomplete="off">
-                <label class="name">Password</label>
+                <input id="pwd" class="input" placeholder=" " type="password" autocomplete="off">
+                <label class="hint">Password</label>
                 <i></i>
             </div>
             <p>密碼在php檔內，若要使用此系統請輸入該密碼</p>
             <div class="buttonParent"><button onclick="login()">Login</button></div>
         </div>
     </div>
+
+    <div id="editBoxBackground" class="dialogBackground close">
+        <div id="editBox" class="dialog close">
+            <div class="inputBox">
+                <input id="studentName" class="input" placeholder=" " type="text" autocomplete="off">
+                <label class="hint">姓名</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="seatNo" class="input sendCheck" placeholder=" " type="text" autocomplete="off" pattern="^(?:0[1-9]|[1-9][0-9])$">
+                <label class="hint">座號</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="chinese" class="input sendCheck" placeholder=" " type="text" autocomplete="off" pattern="^(?:100|[0-9]{1,2})$">
+                <label class="hint">國文</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="math" class="input sendCheck" placeholder=" " type="text" autocomplete="off" pattern="^(?:100|[0-9]{1,2})$">
+                <label class="hint">數學</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="english" class="input sendCheck" placeholder=" " type="text" autocomplete="off" pattern="^(?:100|[0-9]{1,2})$">
+                <label class="hint">英文</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="pro1" class="input sendCheck" placeholder=" " type="text" autocomplete="off" pattern="^(?:100|[0-9]{1,2})$">
+                <label class="hint">專一</label>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input id="pro2" class="input sendCheck" placeholder=" " type="text" autocomplete="off" pattern="^(?:100|[0-9]{1,2})$">
+                <label class="hint">專二</label>
+                <i></i>
+            </div>
+            <div class="buttonParent">
+                <button onclick="sendEdit()">Submit</button>
+                <div class="divider"></div>
+                <button class="close" onclick="toggleDialog('editBox', 'editBoxBackground')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert"></div>
     
     <div class="snackBar">
         <a>點擊欄位名稱排序資料</a>

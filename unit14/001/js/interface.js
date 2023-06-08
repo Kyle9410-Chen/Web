@@ -30,8 +30,6 @@ function getAll() {
 
 function deleteRequest(id) {
     var data = new FormData()
-    console.log(id)
-    console.log(password)
     data.append("id", id)
     data.append("mode", 1)
     data.append("password", password)
@@ -42,7 +40,30 @@ function deleteRequest(id) {
     req.onreadystatechange = () => {
         if (req.readyState == 4 && req.status == 200){
             console.log(req.responseText)
-            db = JSON.parse(req.responseText)
+            refresh()
+        }
+    }
+    req.send(data)
+}
+
+function editRequest(studentData){
+    var data = new FormData()
+    data.append("mode", mode)
+    data.append("password", password)
+    data.append("name", studentData.name)
+    data.append("seatNo", studentData.seatNo)
+    data.append("chinese", studentData.chinese)
+    data.append("english", studentData.english)
+    data.append("math", studentData.math)
+    data.append("pro1", studentData.pro1)
+    data.append("pro2", studentData.pro2)
+    var req = new XMLHttpRequest()
+    var url = "select.php"
+    req.open("POST", url, true)
+
+    req.onreadystatechange = () => {
+        if (req.readyState == 4 && req.status == 200){
+            console.log(req.responseText)
             refresh()
         }
     }
@@ -61,7 +82,7 @@ function refresh() {
         }
         table.children[0].removeChild(element)
     }
-
+    console.log(db)
     index = 1
     for (const x of db) {
         var tr = document.createElement("tr")
@@ -104,8 +125,8 @@ function refresh() {
         tr.appendChild(td7)
         tr.appendChild(td8)
         tr.appendChild(td9)
-        tr.innerHTML += `<td><img id="edit" class="crud" onclick="edit()" src="./001/source/edit" width=100% height=100%></td>`
-        tr.innerHTML += `<td><img id="delete" class="crud" onclick="deleteData(this)" src="./001/source/delete" width=100% height=100%></td>`
+        tr.innerHTML += `<td><img id="edit" class="crud" onclick="edit(this, ${index-1})" src="./001/source/edit" width=100% height=100% style="--index:${index}"></td>`
+        tr.innerHTML += `<td><img id="delete" class="crud" onclick="deleteData(this)" src="./001/source/delete" width=100% height=100% style="--index:${index}"></td>`
         table.children[0].appendChild(tr)
 
         index++

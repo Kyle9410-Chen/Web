@@ -1,0 +1,25 @@
+#login {
+    width: 25%;
+    height: 25%;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login button {
+    width: auto;
+}
+
+#editBox {
+    width: 50%;
+    height: 80%;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

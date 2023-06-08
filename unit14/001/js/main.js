@@ -16,3 +16,99 @@ function login(){
     document.body.appendChild(form)
     form.submit()
 }
+
+function toggleDialog(id, bg_id){
+    var element = document.getElementById(id)
+    var background = document.getElementById(bg_id)
+    element.classList.toggle("close")
+    background.classList.toggle("close")
+}
+
+
+function sendEdit() {
+    
+    var name = document.getElementById("studentName")
+    if (name.value.trim() === ""){
+        newAlert({
+            content : `姓名欄位不可為空`,
+            mode: "error",
+            during : 5000,
+            behavior : {
+                smoothIn : true,
+                float: false
+            }
+        })
+        return 
+    } 
+
+    var elements = [...document.getElementsByClassName("sendCheck")]
+
+    for (const element of elements) {
+        if (!new RegExp(element.getAttribute("pattern")).test(element.value)){
+            element.focus()
+            newAlert({
+                content : `${element.id}欄位的格式不正確`,
+                mode: "error",
+                during : 5000,
+                behavior : {
+                    smoothIn : true,
+                    float: false
+                }
+            })
+            return 
+        }
+    }
+    var data
+    if (mode == 2){
+        data = db.find(x => x.seatNo = document.getElementById("seatNo").value)
+        data.studentName = document.getElementById("studentName").value
+        data.seatNo = document.getElementById("seatNo").value
+        data.chinese = parseInt(document.getElementById("chinese").value)
+        data.math = parseInt(document.getElementById("math").value)
+        data.english = parseInt(document.getElementById("english").value)
+        data.pro1 = parseInt(document.getElementById("pro1").value)
+        data.pro2 = parseInt(document.getElementById("pro2").value)
+    }
+
+    else {
+
+        if (db.some(x => x.seatNo == document.getElementById("seatNo").value)){
+            document.getElementById("seatNo").focus()
+            newAlert({
+                content : `以有座號相同的資料`,
+                mode: "error",
+                during : 5000,
+                behavior : {
+                    smoothIn : true,
+                    float: false
+                }
+            })
+            return 
+        }
+
+        data = {
+            studentName : document.getElementById("studentName").value,
+            seatNo : document.getElementById("seatNo").value,
+            chinese : parseInt(document.getElementById("chinese").value),
+            math : parseInt(document.getElementById("math").value),
+            english : parseInt(document.getElementById("english").value),
+            pro1 : parseInt(document.getElementById("pro1").value),
+            pro2 : parseInt(document.getElementById("pro2").value)
+        }
+
+        db.push(data)
+    }
+    
+
+    editRequest({
+        name : data.studentName,
+        seatNo : data.seatNo,
+        chinese : data.chinese,
+        math : data.math,
+        english : data.english,
+        pro1 : data.pro1,
+        pro2 : data.pro2
+    })
+
+    toggleDialog("editBox", "editBoxBackground")
+}
