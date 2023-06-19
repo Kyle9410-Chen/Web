@@ -1,0 +1,25 @@
+#closeMenu {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    filter: invert(100%) sepia(15%) saturate(7441%) hue-rotate(180deg) brightness(111%) contrast(98%);
+}
+
+#analysis {
+    position: fixed;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    background-color: #4e4e4e;
+    left: 0;
+    transition: left 0.5s ease;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#analysis.close {
+    left: -50%;
+}

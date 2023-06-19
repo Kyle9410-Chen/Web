@@ -12,12 +12,15 @@
     <link rel="stylesheet" href="./001/css/dialog.css">
     <link rel="stylesheet" href="./001/css/box.css">
     <link rel="stylesheet" href="./001/css/alert.css">
+    <link rel="stylesheet" href="./001/css/analysis.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="./001/js/main.js"></script>
     <script src="./001/js/data.js"></script>
     <script src="./001/js/alert.js"></script>
     <script src="./001/js/interface.js"></script>
+    <script src="./001/js/analysis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
     <div id="header">
@@ -44,6 +47,7 @@
                 <th onclick="sortData(9, this)">平均</th>
                 <th>編輯</th>
                 <th>刪除</th>
+                <th>分析</th>
             </tr>
         </table>
     </div>
@@ -134,6 +138,11 @@
                 <button class="close" onclick="toggleDialog('deleteConfirm', 'deleteConfirmBackground')">Close</button>
             </div>
         </div>
+    </div>
+
+    <div id="analysis" class="close">
+        <img id="closeMenu" src="./001/source/closeMenu.svg" onclick="closeMenu()">
+        <canvas id="chart">
     </div>
 
     <div id="alert"></div>

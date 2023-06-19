@@ -130,6 +130,7 @@ function refresh() {
         tr.appendChild(td9)
         tr.innerHTML += `<td><img id="edit" class="crud" onclick="edit(this, ${index-1})" src="./001/source/edit" width=100% height=100% style="--index:${index}"></td>`
         tr.innerHTML += `<td><img id="delete" class="crud" onclick="deleteData(this)" src="./001/source/delete" width=100% height=100% style="--index:${index}"></td>`
+        tr.innerHTML += `<td><img id="dataAnalysis" class="crud" onclick="analysisData(this)" src="./001/source/analysis" width=100% height=100% style="--index:${index}"></td>`
         table.children[0].appendChild(tr)
 
         index++
