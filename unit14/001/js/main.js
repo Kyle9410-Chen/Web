@@ -58,16 +58,17 @@ function sendEdit() {
             return 
         }
     }
-    var data
+
     if (mode == 2){
-        data = db.find(x => x.seatNo = document.getElementById("seatNo").value)
-        data.studentName = document.getElementById("studentName").value
-        data.seatNo = document.getElementById("seatNo").value
-        data.chinese = parseInt(document.getElementById("chinese").value)
-        data.math = parseInt(document.getElementById("math").value)
-        data.english = parseInt(document.getElementById("english").value)
-        data.pro1 = parseInt(document.getElementById("pro1").value)
-        data.pro2 = parseInt(document.getElementById("pro2").value)
+        sendData = db.find(x => x.seatNo === document.getElementById("seatNo").value)
+        console.log(sendData)
+        sendData.studentName = document.getElementById("studentName").value
+        sendData.seatNo = document.getElementById("seatNo").value
+        sendData.chinese = parseInt(document.getElementById("chinese").value)
+        sendData.math = parseInt(document.getElementById("math").value)
+        sendData.english = parseInt(document.getElementById("english").value)
+        sendData.pro1 = parseInt(document.getElementById("pro1").value)
+        sendData.pro2 = parseInt(document.getElementById("pro2").value)
     }
 
     else {

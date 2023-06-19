@@ -26,7 +26,7 @@
             <a>說明</a>
         </div>
         <div class="button" style="--i:1;" onclick="insert()">
-            <a>說明</a>
+            <a>新增</a>
         </div>
     </div>
 
@@ -75,6 +75,7 @@
                 <i></i>
             </div>
             <p>密碼在php檔內，若要使用此系統請輸入該密碼</p>
+            <p>11-1 改過了 : D</p>
             <div class="buttonParent"><button onclick="login()">Login</button></div>
         </div>
     </div>
@@ -120,6 +121,17 @@
                 <button onclick="sendEdit()">Submit</button>
                 <div class="divider"></div>
                 <button class="close" onclick="toggleDialog('editBox', 'editBoxBackground')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteConfirmBackground" class="dialogBackground close">
+        <div id="deleteConfirm" class="dialog close">
+            <h2>確定刪除?</h2>
+            <div class="buttonParent">
+                <button onclick="sendDelete()">Submit</button>
+                <div class="divider"></div>
+                <button class="close" onclick="toggleDialog('deleteConfirm', 'deleteConfirmBackground')">Close</button>
             </div>
         </div>
     </div>

@@ -19,13 +19,19 @@ function newData(id, name, no, chinese, math, english, society, science, total, 
 }
 
 function sortData(index, element){
-    if (index == sortType){
+    if (index == 0){
+        sortMode = 1
+        data = data.sort((a, b) => sortMode*(a.no - b.no))
+    }
+    else if (index == sortType){
         sortMode = sortMode * (-1)
     }
     else {
         sortMode = 1
     }
     sortType = index
+
+    
 
     if (index == 1){
         data = data.sort((a, b) => {
@@ -73,6 +79,7 @@ function sortData(index, element){
         data = data.sort((a, b) => sortMode*(a.average - b.average))
     }
 
+    console.log(data)
 
     var table = document.getElementById("table")
 
@@ -84,13 +91,16 @@ function sortData(index, element){
 
     }
 
-    element.classList.add(sortMode == 1? "sort1" : "sort2")
-    if (sortMode == 1){
-        element.classList.remove("sort2")
+    if (index != 0){
+        element.classList.add(sortMode == 1? "sort1" : "sort2")
+        if (sortMode == 1){
+            element.classList.remove("sort2")
+        }
+        else {
+            element.classList.remove("sort1")
+        }
     }
-    else {
-        element.classList.remove("sort1")
-    }
+    
 
     var row = [...table.rows]
     var tempRow = [row[0]]
@@ -118,10 +128,17 @@ function toTop(){
     window.scrollTo({behavior: "smooth", top:"0"})
 }
 
+var deleteElement
 function deleteData(element){
-    db.splice(getComputedStyle(element).getPropertyValue("--i") - 1, 1)
-    console.log(db)
-    deleteRequest(element.parentNode.parentNode.children[1].innerText)
+    deleteElement = element
+    toggleDialog("deleteConfirm", "deleteConfirmBackground")
+}
+
+function sendDelete(){
+    db.splice(getComputedStyle(deleteElement).getPropertyValue("--i") - 1, 1)
+    console.log(deleteElement.parentNode.parentNode.children[1].innerText)
+    deleteRequest(deleteElement.parentNode.parentNode.children[1].innerText)
+    toggleDialog("deleteConfirm", "deleteConfirmBackground")
 }
 
 function edit(element, index){

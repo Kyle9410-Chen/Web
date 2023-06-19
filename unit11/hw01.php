@@ -53,7 +53,13 @@
                         array_push($data, $score);
                     }
                     echo "<td>".($total)."</td>";
-                    echo "<td>".(round($total/5, 2))."</td>";
+                    if (round($total/5, 2) >= 60){
+                        echo "<td>".(round($total/5, 2))."</td>";
+                    }
+                    else {
+                        echo "<td class=\"bad\">".(round($total/5, 2))."</td>";
+                    }
+                    
                     array_push($data, $total);
                     array_push($data, round($total/5, 2));
                     echo "</tr>";

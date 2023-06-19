@@ -114,6 +114,9 @@ function refresh() {
         if (x.pro2 < 60){
             td7.classList.add("bad")
         }
+        if (parseInt(td9.innerText) < 60){
+            td9.classList.add("bad")
+        }
 
 
         tr.appendChild(td1)
@@ -131,4 +134,6 @@ function refresh() {
 
         index++
     }
+
+    sortData(0, null)
 }

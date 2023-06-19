@@ -27,10 +27,6 @@ function sortData(index, element){
     }
     sortType = index
 
-    
-
-    
-
     if (index == 1){
         data = data.sort((a, b) => {
             const nameA = a.name.toUpperCase()
