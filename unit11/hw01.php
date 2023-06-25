@@ -65,6 +65,10 @@
                     echo "</tr>";
                     echo "<script>newData(".join(",",$data).")</script>";
                 }
+
+                foreach($data as $i){
+                    
+                }
             ?>
         </table>
     </div>

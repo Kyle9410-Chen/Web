@@ -96,6 +96,7 @@
                 <label class="hint">座號</label>
                 <i></i>
             </div>
+            ...
             <div class="inputBox">
                 <input id="chinese" class="input sendCheck" placeholder=" " type="text" autocomplete="off" pattern="^(?:100|[0-9]{1,2})$">
                 <label class="hint">國文</label>

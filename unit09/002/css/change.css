@@ -29,7 +29,6 @@
     border-radius: 50%;
     background-color: #ff43e2;
     z-index: 1;
-
     transform: scale(0);
     transition: transform 0.8s ease-out;
 }

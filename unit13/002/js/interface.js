@@ -64,6 +64,9 @@ function refresh() {
         if (x.pro2 < 60){
             td7.classList.add("bad")
         }
+        if (Math.round((x.chinese + x.english + x.math + x.pro1 + x.pro2) / 5, 2) < 60){
+            td9.classList.add("bad")
+        }
 
 
         tr.appendChild(td1)
